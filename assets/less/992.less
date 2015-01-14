@@ -1,0 +1,60 @@
+// ROOT =======================================================
+// TYPOGRAPHY =================================================
+// TEXTURE ====================================================
+// ELEMENTS ===================================================
+// LAYOUT =====================================================
+.article-author-side,
+.article-author-bottom {
+	h3,
+	.bio-photo,
+	p,
+	.author-social {
+		max-width: 150px;
+	}
+	img.bio-photo {
+		width: 150px;
+		height: 150px;
+		.rounded(150px);
+	}
+}
+.work {
+	margin-bottom: 5em;
+	figure {
+		width: 55%;
+	}
+	.workText {
+		width: 43%;
+		margin: 5% 0% 0% 0%;
+		float: right;
+		text-align: right;
+	}
+	h2 {
+		clear: both;
+		margin: 2em 0 1em 0;
+	}
+		//Grayscale
+		// http://stackoverflow.com/questions/609273/convert-an-image-to-grayscale-in-html-css?rq=1
+	img {
+		filter: url("data:image/svg+xml;utf8,<svg%20xmlns='http://www.w3.org/2000/svg'><filter%20id='grayscale'><feColorMatrix%20type='matrix'%20values='0.3333%200.3333%200.3333%200%200%200.3333%200.3333%200.3333%200%200%200.3333%200.3333%200.3333%200%200%200%200%200%201%200'/></filter></svg>#grayscale"); /* Firefox 3.5+ */
+		filter: gray; /* IE6+ */
+		filter: grayscale(100%); /* Current draft standard */
+		-webkit-filter: grayscale(100%); /* New WebKit */
+		-moz-filter: grayscale(100%);
+		-ms-filter: grayscale(100%); 
+		-o-filter: grayscale(100%);
+	}
+}
+.work:hover {
+	img {
+	filter:url("data:image/svg+xml;utf8,<svg%20xmlns=\'http://www.w3.org/2000/svg\'><filter%20id=\'grayscale\'><feColorMatrix%20type=\'matrix\'%20values=\'1%200%200%200%200,%200%201%200%200%200,%200%200%201%200%200,%200%200%200%201%200\'/></filter></svg>#grayscale");
+    -webkit-filter: grayscale(0%);
+	}
+}
+
+/* Image Grid ============================================== */
+.image-grid {
+	li {
+		width: 16.666666666%;
+	}
+}
+// VENDOR-SPECIFIC ============================================

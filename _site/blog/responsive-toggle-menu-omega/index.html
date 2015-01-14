@@ -1,0 +1,365 @@
+<!doctype html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if (IE 7)&!(IEMobile)]><html class="no-js lt-ie9 lt-ie8" lang="en"><![endif]-->
+<!--[if (IE 8)&!(IEMobile)]><html class="no-js lt-ie9" lang="en"><![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<title>Responsive Toggle Menu in Omega 3.x &#8211; Scott Pinkelman</title>
+<meta name="description" content="How to make a responsive toggle menu in Omega 3.x">
+<meta name="keywords" content="responsive design, drupal, omega, menus">
+<!-- Twitter Cards -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://scottpinkelman.com/images/">
+<meta name="twitter:title" content="Responsive Toggle Menu in Omega 3.x">
+<meta name="twitter:description" content="How to make a responsive toggle menu in Omega 3.x">
+<meta name="twitter:creator" content="@scottpinkelman">
+
+<!-- Open Graph -->
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Responsive Toggle Menu in Omega 3.x">
+<meta property="og:description" content="How to make a responsive toggle menu in Omega 3.x">
+<meta property="og:url" content="http://scottpinkelman.com/blog/responsive-toggle-menu-omega">
+<meta property="og:site_name" content="Scott Pinkelman">
+
+
+
+
+
+<link rel="canonical" href="http://scottpinkelman.com/blog/responsive-toggle-menu-omega">
+<link href="http://scottpinkelman.com/feed.xml" type="application/atom+xml" rel="alternate" title="Scott Pinkelman Feed">
+
+
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Google Webfonts -->
+<link href='http://fonts.googleapis.com/css?family=Lato:700|Arvo:400,700,400italic' rel='stylesheet' type='text/css'>
+<!-- For all browsers -->
+<link rel="stylesheet" href="http://scottpinkelman.com/assets/css/main.min.css">
+
+<!--[if (lt IE 9) & (!IEMobile)]>
+<link rel="stylesheet" href="http://scottpinkelman.com/assets/css/ie.min.css">
+<![endif]-->
+
+<meta http-equiv="cleartype" content="on">
+
+<!-- Load Modernizr -->
+<script src="http://scottpinkelman.com/assets/js/vendor/modernizr-2.6.2.custom.min.js"></script>
+
+<!-- Icons -->
+<!-- 16x16 -->
+<link rel="shortcut icon" href="http://scottpinkelman.com/favicon.ico">
+<!-- 32x32 -->
+<link rel="shortcut icon" href="http://scottpinkelman.com/favicon.png">
+<!-- 57x57 (precomposed) for iPhone 3GS, pre-2011 iPod Touch and older Android devices -->
+<link rel="apple-touch-icon-precomposed" href="http://scottpinkelman.com/images/apple-touch-icon-precomposed.png">
+<!-- 72x72 (precomposed) for 1st generation iPad, iPad 2 and iPad mini -->
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="http://scottpinkelman.com/images/apple-touch-icon-72x72-precomposed.png">
+<!-- 114x114 (precomposed) for iPhone 4, 4S, 5 and post-2011 iPod Touch -->
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="http://scottpinkelman.com/images/apple-touch-icon-114x114-precomposed.png">
+<!-- 144x144 (precomposed) for iPad 3rd and 4th generation -->
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://scottpinkelman.com/images/apple-touch-icon-144x144-precomposed.png">
+
+</head>
+
+<body class="article" itemscope itemtype="http://schema.org/WebPage">
+
+<!--[if lt IE 9]><div class="browser-upgrade alert alert-info">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</div><![endif]-->
+
+<div class="navigation-wrapper">
+	<div class="site-name">
+		<a href="http://scottpinkelman.com">Scott Pinkelman</a>
+	</div><!-- /.site-name -->
+	<div class="top-navigation">
+		<nav role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
+		    <ul>
+		        
+				<li><a href="http://scottpinkelman.com/about/" >About</a></li>
+		        
+				<li><a href="http://scottpinkelman.com/blog/" >Blog</a></li>
+		        
+				<li><a href="http://scottpinkelman.com/work/" >Work</a></li>
+		        
+				<li><a href="http://scottpinkelman.com/contact/" >Contact</a></li>
+		        
+		        <li><i class="icon-feed"></i> <a href="http://scottpinkelman.com/feed.xml" title="Atom/RSS feed">Feed</a>
+		    </ul>
+		</nav>
+	</div><!-- /.top-navigation -->
+</div><!-- /.navigation-wrapper -->
+
+
+
+<div id="main" role="main" itemprop="mainContentOfPage" itemscope itemtype="http://schema.org/Blog">
+  <div class="article-author-side">
+    <img src="http://scottpinkelman.com/images/bio-photo.jpg" class="bio-photo" alt="Scott Pinkelman bio photo"></a>
+<h3>Scott Pinkelman</h3>
+<p>web development, data visualization, digital literacy</p>
+<p><a href"mailto:scott@scottpinkelman.com">scott@scottpinkelman.com</a></p>
+<a href="http://twitter.com/scottpinkelman" class="author-social" target="_blank"><i class="icon-twitter"></i> Twitter</a>
+
+
+<a href="http://linkedin.com/profile/view?id=205868891" class="author-social" target="_blank"><i class="icon-linkedin"></i> LinkedIn</a>
+
+<a href="http://github.com/sco-tt/" class="author-social" target="_blank"><i class="icon-github"></i> Github</a>
+
+
+
+  </div>
+  <article itemscope itemtype="http://schema.org/BlogPosting" itemprop="blogPost">
+    <div class="headline-wrap">
+      <h1 itemprop="name">Responsive Toggle Menu in Omega 3.x</h1>
+      <h2></h2>
+    </div><!--/ .headline-wrap -->
+    <div class="article-wrap" itemprop="text">
+      <section id="table-of-contents" class="toc">
+  <header>
+    <h3>Contents</h3>
+  </header>
+<div id="drawer">
+<ul id="markdown-toc">
+  <li><a href="#notes">Notes</a></li>
+  <li><a href="#what-youll-need">What you’ll need</a></li>
+  <li><a href="#modifying-omega-menu-template-file">Modifying Omega Menu Template File</a></li>
+  <li><a href="#javascript">Javascript</a></li>
+  <li><a href="#css">CSS</a></li>
+  <li><a href="#customize">Customize</a></li>
+</ul>
+
+  </div>
+</section>
+<!-- /#table-of-contents -->
+
+<h2 id="notes">Notes</h2>
+<ul>
+  <li>This was made with Omega 7.x-3.1</li>
+  <li>This only works for first level menu items. See <a href="http://ivanchaquea.com/creating-responsive-menu-omega-subthemes.html">this tutorial</a> for multi-level menus</li>
+  <li>There is a <a href="http://demos.scottpinkelman.com/menus/">demo</a></li>
+</ul>
+
+<h2 id="what-youll-need">What you’ll need</h2>
+<ul>
+  <li>An HTML5 Omega subtheme</li>
+  <li>A text editor</li>
+  <li>Optional: If you want to make a hip ‘Navicon’ instead of the word Menu, you’ll need the <a href="http://drupal.org/project/fontyourface">@font-your-face module</a> and a icon from somewhere like <a href="http://icomoon.io/">IcoMoon</a></li>
+</ul>
+
+<h2 id="modifying-omega-menu-template-file">Modifying Omega Menu Template File</h2>
+
+<p>Once you’ve created an Omega HTML5 subtheme, you’ll want modify the menu template in our subtheme. First copy <strong>sites/all/themes/omega/omega/templates/region–menu.tpl.php</strong> to
+<strong>sites/all/themes/SUBTHEME_NAME/templates</strong>
+Open it up with a text editor. It should look like this:</p>
+
+<div class="highlight"><pre><code class="language-php" data-lang="php">&lt;div&lt;?php print $attributes; ?&gt;&gt;
+  &lt;div&lt;?php print $content_attributes; ?&gt;&gt;
+    &lt;?php if ($main_menu || $secondary_menu): ?&gt;
+    &lt;nav class=&quot;navigation&quot;&gt;
+      &lt;?php print theme('links__system_main_menu', array('links' =&gt; $main_menu, 'attributes' =&gt; array('id' =&gt; 'main-menu', 'class' =&gt; array('links', 'inline', 'clearfix', 'main-menu')), 'heading' =&gt; array('text' =&gt; t('Main menu'),'level' =&gt; 'h2','class' =&gt; array('element-invisible')))); ?&gt;
+      &lt;?php print theme('links__system_secondary_menu', array('links' =&gt; $secondary_menu, 'attributes' =&gt; array('id' =&gt; 'secondary-menu', 'class' =&gt; array('links', 'inline', 'clearfix', 'secondary-menu')), 'heading' =&gt; array('text' =&gt; t('Secondary menu'),'level' =&gt; 'h2','class' =&gt; array('element-invisible')))); ?&gt;
+    &lt;/nav&gt;
+    &lt;?php endif; ?&gt;
+    &lt;?php print $content; ?&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre></div>
+
+<p>We’ll modify the template so that we have a mobile menu toggle, and a role attribute in our main navigation menu. We’ll add the the mobile menu toggle on line 4, and adjust our tag in line 5:</p>
+
+<div class="highlight"><pre><code class="language-html" data-lang="html">&lt;a href=&quot;#menu&quot; class=&quot;menu-link&quot;&gt;Menu&lt;/a&gt;     /*This line is added*/
+    &lt;nav id=&quot;menu&quot; role=&quot;navigation&quot;&gt;      /*This line is modified*/</code></pre></div>
+
+<p>So <strong>region–menu.tpl.php</strong> will look like this:</p>
+
+<div class="highlight"><pre><code class="language-php" data-lang="php">&lt;div&lt;?php print $attributes; ?&gt;&gt;
+  &lt;div&lt;?php print $content_attributes; ?&gt;&gt;
+    &lt;?php if ($main_menu || $secondary_menu): ?&gt;
+    &lt;a href=&quot;#menu&quot; class=&quot;menu-link&quot;&gt;Menu&lt;/a&gt;
+    &lt;nav id=&quot;menu&quot; role=&quot;navigation&quot;&gt;
+      &lt;?php print theme('links__system_main_menu', array('links' =&gt; $main_menu, 'attributes' =&gt; array('id' =&gt; 'main-menu', 'class' =&gt; array('links', 'inline', 'clearfix', 'main-menu')), 'heading' =&gt; array('text' =&gt; t('Main menu'),'level' =&gt; 'h2','class' =&gt; array('element-invisible')))); ?&gt;
+      &lt;?php print theme('links__system_secondary_menu', array('links' =&gt; $secondary_menu, 'attributes' =&gt; array('id' =&gt; 'secondary-menu', 'class' =&gt; array('links', 'inline', 'clearfix', 'secondary-menu')), 'heading' =&gt; array('text' =&gt; t('Secondary menu'),'level' =&gt; 'h2','class' =&gt; array('element-invisible')))); ?&gt;
+    &lt;/nav&gt;
+    &lt;?php endif; ?&gt;
+    &lt;?php print $content; ?&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre></div>
+
+<h2 id="javascript">Javascript</h2>
+
+<p>Next we’ll <a href="https://drupal.org/node/304255">add some javascript</a> was used in the CodePen: </p>
+
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript">(function ($) { 
+    $(document).ready(function($){
+      $('body').addClass('js');
+      var $menu = $('#menu'),
+        $menulink = $('.menu-link');
+       
+    $menulink.click(function() {
+      $menulink.toggleClass('active');
+      $menu.toggleClass('active');
+      return false;
+    });});
+}(jQuery));</code></pre></div>
+
+<p>I generally add it using the ‘Theme’s Info File’ method (this caches it). I do that by creating a folder in my subtheme (e.g. <strong>sites/all/themes/SUBTHEME_NAME/js/menu.js</strong>) and then adding ‘scripts[] = js/menu.js’ to SUBTHEME_NAME.info) but you can do it however you like.</p>
+
+<h2 id="css">CSS</h2>
+
+<p>Finally, we’ll copy over the CSS to the global.css file.</p>
+
+<div class="highlight"><pre><code class="language-css" data-lang="css">a.menu-link {
+float: right;
+    display: block;
+    padding: 1em;
+}
+nav[role=navigation] {
+    clear: both;
+    -webkit-transition: all 0.3s ease-out;  
+    -moz-transition: all 0.3s ease-out;
+    -ms-transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;
+}
+.js nav[role=navigation] {
+    overflow: hidden;
+    max-height: 0;
+}
+nav[role=navigation].active {
+    max-height: 15em;
+}
+nav[role=navigation] ul {
+    margin: 0;
+    padding: 0;
+    border-top: 1px solid #808080;
+}
+nav[role=navigation] li a {
+    display: block;
+    padding: 0.8em;
+    border-bottom: 1px solid #808080;
+}
+/*End Codepen Code */
+/*Reseting system style causing gray lines to show up in Toggle Menu */
+nav[role=navigation] ul.inline li {
+    padding: 0;
+}</code></pre></div>
+
+<p>Then we’ll add this to <strong>SUBTHEME_NAME-alpha-default.css</strong></p>
+
+<div class="highlight"><pre><code class="language-css" data-lang="css">a.menu-link {
+   display: none;
+}
+.js nav[role=navigation] {
+    max-height: none;
+}
+nav[role=navigation] ul {
+    margin: 0 0 0 -0.25em;
+    border: 0;
+}
+ 
+nav[role=navigation]  li {
+    display: inline-block;
+    margin: 0 0.25em;
+}
+nav[role=navigation] li a {
+    border: 0;
+}</code></pre></div>
+
+<h2 id="customize">Customize</h2>
+
+<p>Clear your cache and check it out!
+If you want to use a <a href="http://css-tricks.com/three-line-menu-navicon/">navicon</a> instead of the word “menu” you can alter the menu template accordingly. I’ve used the <a href="http://drupal.org/project/iconfonts">Icon font module</a> to display an icon font navicon. See CSS Tricks’ <a href="http://css-tricks.com/html-for-icon-font-usage/">“HTML For Icon Font Usage</a></p>
+
+<div><a href="http://demos.scottpinkelman.com/menus/" class="btn">View Demo</a></div>
+
+      <hr />
+      <footer role="contentinfo">
+        <div class="article-author-bottom">
+          <img src="http://scottpinkelman.com/images/bio-photo.jpg" class="bio-photo" alt="Scott Pinkelman bio photo"></a>
+<h3>Scott Pinkelman</h3>
+<p>web development, data visualization, digital literacy</p>
+<p><a href"mailto:scott@scottpinkelman.com">scott@scottpinkelman.com</a></p>
+<a href="http://twitter.com/scottpinkelman" class="author-social" target="_blank"><i class="icon-twitter"></i> Twitter</a>
+
+
+<a href="http://linkedin.com/profile/view?id=205868891" class="author-social" target="_blank"><i class="icon-linkedin"></i> LinkedIn</a>
+
+<a href="http://github.com/sco-tt/" class="author-social" target="_blank"><i class="icon-github"></i> Github</a>
+
+
+
+        </div>
+        <p class="byline"><strong>Responsive Toggle Menu in Omega 3.x</strong> was published on <time datetime="2013-01-10T00:00:00-05:00" itemprop="datePublished">January 10, 2013</time> and last modified on <time datetime="2014-01-27" itemprop="dateModified">January 27, 2014</time> by <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name"><a href="http://scottpinkelman.com/about" title="About Scott Pinkelman" itemprop="url">Scott Pinkelman</a></span></span>.</p>
+      </footer>
+    </div><!-- /.article-wrap -->
+  </article>
+</div><!-- /#main -->
+
+<div class="footer-wrap">
+  <div class="related-articles">
+  <h4>You might also enjoy <small class="pull-right">(<a href="http://scottpinkelman.com/articles">View all articles</a>)</small></h4>
+    <ul>
+    
+      
+      
+        
+          
+        
+      
+      
+      <li><a href="http://scottpinkelman.com/blog/google-apps-scripts-column-sorter" title="Google Sheets Column Sorter with Google Apps Scripts">Google Sheets Column Sorter with Google Apps Scripts</a></li>
+      
+    
+      
+      
+        
+          
+        
+      
+      
+      <li><a href="http://scottpinkelman.com/blog/up-and-running-mail-in-a-box" title="Up and Running With Mail-in-a-Box">Up and Running With Mail-in-a-Box</a></li>
+      
+    
+      
+      
+        
+          
+        
+      
+      
+      <li><a href="http://scottpinkelman.com/blog/google-apps-script-compiling-spreadsheets" title="Compiling Spreadsheets in Google Sheets">Compiling Spreadsheets in Google Sheets</a></li>
+      
+    
+    </ul>
+    <hr />
+  </div><!-- /.related-articles -->
+  <footer>
+    <span>&copy; 2015 Scott Pinkelman. Powered by <a href="http://jekyllrb.com">Jekyll</a> using the <a href="http://mademistakes.com/">Minimal Mistakes</a> theme.</span>
+
+  </footer>
+</div><!-- /.footer-wrap -->
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="http://scottpinkelman.com/assets/js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+<script src="http://scottpinkelman.com/assets/js/scripts.min.js"></script>
+
+<!-- Asynchronous Google Analytics snippet -->
+<script>
+  var _gaq = _gaq || [];
+  var pluginUrl = 
+ '//www.google-analytics.com/plugins/ga/inpage_linkid.js';
+  _gaq.push(['_require', 'inpage_linkid', pluginUrl]);
+  _gaq.push(['_setAccount', 'UA-37962833-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+	        
+
+</body>
+</html>

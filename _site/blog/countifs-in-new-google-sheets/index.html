@@ -1,0 +1,222 @@
+<!doctype html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if (IE 7)&!(IEMobile)]><html class="no-js lt-ie9 lt-ie8" lang="en"><![endif]-->
+<!--[if (IE 8)&!(IEMobile)]><html class="no-js lt-ie9" lang="en"><![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<title>Using COUNTIFS in the New Google Sheets (February 2014) &#8211; Scott Pinkelman</title>
+<meta name="description" content="Working with the COUNTIFS in the new google sheets.">
+<meta name="keywords" content="data, google, spreadsheets">
+<!-- Twitter Cards -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://scottpinkelman.com/images/">
+<meta name="twitter:title" content="Using COUNTIFS in the New Google Sheets (February 2014)">
+<meta name="twitter:description" content="Working with the COUNTIFS in the new google sheets.">
+<meta name="twitter:creator" content="@scottpinkelman">
+
+<!-- Open Graph -->
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Using COUNTIFS in the New Google Sheets (February 2014)">
+<meta property="og:description" content="Working with the COUNTIFS in the new google sheets.">
+<meta property="og:url" content="http://scottpinkelman.com/blog/countifs-in-new-google-sheets">
+<meta property="og:site_name" content="Scott Pinkelman">
+
+
+
+
+
+<link rel="canonical" href="http://scottpinkelman.com/blog/countifs-in-new-google-sheets">
+<link href="http://scottpinkelman.com/feed.xml" type="application/atom+xml" rel="alternate" title="Scott Pinkelman Feed">
+
+
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Google Webfonts -->
+<link href='http://fonts.googleapis.com/css?family=Lato:700|Arvo:400,700,400italic' rel='stylesheet' type='text/css'>
+<!-- For all browsers -->
+<link rel="stylesheet" href="http://scottpinkelman.com/assets/css/main.min.css">
+
+<!--[if (lt IE 9) & (!IEMobile)]>
+<link rel="stylesheet" href="http://scottpinkelman.com/assets/css/ie.min.css">
+<![endif]-->
+
+<meta http-equiv="cleartype" content="on">
+
+<!-- Load Modernizr -->
+<script src="http://scottpinkelman.com/assets/js/vendor/modernizr-2.6.2.custom.min.js"></script>
+
+<!-- Icons -->
+<!-- 16x16 -->
+<link rel="shortcut icon" href="http://scottpinkelman.com/favicon.ico">
+<!-- 32x32 -->
+<link rel="shortcut icon" href="http://scottpinkelman.com/favicon.png">
+<!-- 57x57 (precomposed) for iPhone 3GS, pre-2011 iPod Touch and older Android devices -->
+<link rel="apple-touch-icon-precomposed" href="http://scottpinkelman.com/images/apple-touch-icon-precomposed.png">
+<!-- 72x72 (precomposed) for 1st generation iPad, iPad 2 and iPad mini -->
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="http://scottpinkelman.com/images/apple-touch-icon-72x72-precomposed.png">
+<!-- 114x114 (precomposed) for iPhone 4, 4S, 5 and post-2011 iPod Touch -->
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="http://scottpinkelman.com/images/apple-touch-icon-114x114-precomposed.png">
+<!-- 144x144 (precomposed) for iPad 3rd and 4th generation -->
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://scottpinkelman.com/images/apple-touch-icon-144x144-precomposed.png">
+
+</head>
+
+<body class="article" itemscope itemtype="http://schema.org/WebPage">
+
+<!--[if lt IE 9]><div class="browser-upgrade alert alert-info">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</div><![endif]-->
+
+<div class="navigation-wrapper">
+	<div class="site-name">
+		<a href="http://scottpinkelman.com">Scott Pinkelman</a>
+	</div><!-- /.site-name -->
+	<div class="top-navigation">
+		<nav role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
+		    <ul>
+		        
+				<li><a href="http://scottpinkelman.com/about/" >About</a></li>
+		        
+				<li><a href="http://scottpinkelman.com/blog/" >Blog</a></li>
+		        
+				<li><a href="http://scottpinkelman.com/work/" >Work</a></li>
+		        
+				<li><a href="http://scottpinkelman.com/contact/" >Contact</a></li>
+		        
+		        <li><i class="icon-feed"></i> <a href="http://scottpinkelman.com/feed.xml" title="Atom/RSS feed">Feed</a>
+		    </ul>
+		</nav>
+	</div><!-- /.top-navigation -->
+</div><!-- /.navigation-wrapper -->
+
+
+
+<div id="main" role="main" itemprop="mainContentOfPage" itemscope itemtype="http://schema.org/Blog">
+  <div class="article-author-side">
+    <img src="http://scottpinkelman.com/images/bio-photo.jpg" class="bio-photo" alt="Scott Pinkelman bio photo"></a>
+<h3>Scott Pinkelman</h3>
+<p>web development, data visualization, digital literacy</p>
+<p><a href"mailto:scott@scottpinkelman.com">scott@scottpinkelman.com</a></p>
+<a href="http://twitter.com/scottpinkelman" class="author-social" target="_blank"><i class="icon-twitter"></i> Twitter</a>
+
+
+<a href="http://linkedin.com/profile/view?id=205868891" class="author-social" target="_blank"><i class="icon-linkedin"></i> LinkedIn</a>
+
+<a href="http://github.com/sco-tt/" class="author-social" target="_blank"><i class="icon-github"></i> Github</a>
+
+
+
+  </div>
+  <article itemscope itemtype="http://schema.org/BlogPosting" itemprop="blogPost">
+    <div class="headline-wrap">
+      <h1 itemprop="name">Using COUNTIFS in the New Google Sheets (February 2014)</h1>
+      <h2></h2>
+    </div><!--/ .headline-wrap -->
+    <div class="article-wrap" itemprop="text">
+      <p>Today I tried to convert a spreadsheet to the  <a href="https://support.google.com/drive/answer/3541068?hl=en">new version of Google Sheets</a> that’s supposed to be faster and better. As I was copying over formulas, I decided to try out a new formula that Google had rolled out in this new version of sheets. It’s called COUNTIFS and it allows you do conditional counting based on mulitple sets of criteria. </p>
+
+<p>Previously, I had used the following formula to help build an easily copy-pasted set of cells for tracking users at a public computer lab. I wanted to check if a certain column had an entry in it, and count it if it was in a row with a certain date. The formula read: </p>
+
+<div class="highlight"><pre><code class="language-html" data-lang="html">=COUNTA( IFERROR( FILTER(N5:N300 ; SEARCH( E6 ; H5:H616 ) ) ) )</code></pre></div>
+
+<p>Using COUNTIFS, I was able to update it to a pleasant-looking:</p>
+
+<div class="highlight"><pre><code class="language-html" data-lang="html">=COUNTIFS(H5:H300, E6, N5:N300, &quot;\*&quot;)</code></pre></div>
+
+<p>Which basically says, moving backwards,: count if there’s anything (this is the variable <code>\*</code>), in the N column IF in that row the value of H (a series of dates in my example) column is E6, the date we’re building <em>Daily Total For</em>.</p>
+
+<p>This isn’t news for Excel experts, but might come in handy for those (like me) who are not.</p>
+
+      <hr />
+      <footer role="contentinfo">
+        <div class="article-author-bottom">
+          <img src="http://scottpinkelman.com/images/bio-photo.jpg" class="bio-photo" alt="Scott Pinkelman bio photo"></a>
+<h3>Scott Pinkelman</h3>
+<p>web development, data visualization, digital literacy</p>
+<p><a href"mailto:scott@scottpinkelman.com">scott@scottpinkelman.com</a></p>
+<a href="http://twitter.com/scottpinkelman" class="author-social" target="_blank"><i class="icon-twitter"></i> Twitter</a>
+
+
+<a href="http://linkedin.com/profile/view?id=205868891" class="author-social" target="_blank"><i class="icon-linkedin"></i> LinkedIn</a>
+
+<a href="http://github.com/sco-tt/" class="author-social" target="_blank"><i class="icon-github"></i> Github</a>
+
+
+
+        </div>
+        <p class="byline"><strong>Using COUNTIFS in the New Google Sheets (February 2014)</strong> was published on <time datetime="2014-02-28T00:00:00-05:00" itemprop="datePublished">February 28, 2014</time> and last modified on <time datetime="2014-02-28" itemprop="dateModified">February 28, 2014</time> by <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name"><a href="http://scottpinkelman.com/about" title="About Scott Pinkelman" itemprop="url">Scott Pinkelman</a></span></span>.</p>
+      </footer>
+    </div><!-- /.article-wrap -->
+  </article>
+</div><!-- /#main -->
+
+<div class="footer-wrap">
+  <div class="related-articles">
+  <h4>You might also enjoy <small class="pull-right">(<a href="http://scottpinkelman.com/articles">View all articles</a>)</small></h4>
+    <ul>
+    
+      
+      
+        
+          
+        
+      
+      
+      <li><a href="http://scottpinkelman.com/blog/google-apps-scripts-column-sorter" title="Google Sheets Column Sorter with Google Apps Scripts">Google Sheets Column Sorter with Google Apps Scripts</a></li>
+      
+    
+      
+      
+        
+          
+        
+      
+      
+      <li><a href="http://scottpinkelman.com/blog/up-and-running-mail-in-a-box" title="Up and Running With Mail-in-a-Box">Up and Running With Mail-in-a-Box</a></li>
+      
+    
+      
+      
+        
+          
+        
+      
+      
+      <li><a href="http://scottpinkelman.com/blog/google-apps-script-compiling-spreadsheets" title="Compiling Spreadsheets in Google Sheets">Compiling Spreadsheets in Google Sheets</a></li>
+      
+    
+    </ul>
+    <hr />
+  </div><!-- /.related-articles -->
+  <footer>
+    <span>&copy; 2015 Scott Pinkelman. Powered by <a href="http://jekyllrb.com">Jekyll</a> using the <a href="http://mademistakes.com/">Minimal Mistakes</a> theme.</span>
+
+  </footer>
+</div><!-- /.footer-wrap -->
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="http://scottpinkelman.com/assets/js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+<script src="http://scottpinkelman.com/assets/js/scripts.min.js"></script>
+
+<!-- Asynchronous Google Analytics snippet -->
+<script>
+  var _gaq = _gaq || [];
+  var pluginUrl = 
+ '//www.google-analytics.com/plugins/ga/inpage_linkid.js';
+  _gaq.push(['_require', 'inpage_linkid', pluginUrl]);
+  _gaq.push(['_setAccount', 'UA-37962833-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+	        
+
+</body>
+</html>

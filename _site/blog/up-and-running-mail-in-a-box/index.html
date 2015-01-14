@@ -1,0 +1,306 @@
+<!doctype html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if (IE 7)&!(IEMobile)]><html class="no-js lt-ie9 lt-ie8" lang="en"><![endif]-->
+<!--[if (IE 8)&!(IEMobile)]><html class="no-js lt-ie9" lang="en"><![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<title>Up and Running With Mail-in-a-Box &#8211; Scott Pinkelman</title>
+<meta name="description" content="Impression on setting up my own mail server with Mail-in-a-Box">
+<meta name="keywords" content="email, privacy">
+<!-- Twitter Cards -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://scottpinkelman.com/images/">
+<meta name="twitter:title" content="Up and Running With Mail-in-a-Box">
+<meta name="twitter:description" content="Impression on setting up my own mail server with Mail-in-a-Box">
+<meta name="twitter:creator" content="@scottpinkelman">
+
+<!-- Open Graph -->
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Up and Running With Mail-in-a-Box">
+<meta property="og:description" content="Impression on setting up my own mail server with Mail-in-a-Box">
+<meta property="og:url" content="http://scottpinkelman.com/blog/up-and-running-mail-in-a-box">
+<meta property="og:site_name" content="Scott Pinkelman">
+
+
+
+
+
+<link rel="canonical" href="http://scottpinkelman.com/blog/up-and-running-mail-in-a-box">
+<link href="http://scottpinkelman.com/feed.xml" type="application/atom+xml" rel="alternate" title="Scott Pinkelman Feed">
+
+
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Google Webfonts -->
+<link href='http://fonts.googleapis.com/css?family=Lato:700|Arvo:400,700,400italic' rel='stylesheet' type='text/css'>
+<!-- For all browsers -->
+<link rel="stylesheet" href="http://scottpinkelman.com/assets/css/main.min.css">
+
+<!--[if (lt IE 9) & (!IEMobile)]>
+<link rel="stylesheet" href="http://scottpinkelman.com/assets/css/ie.min.css">
+<![endif]-->
+
+<meta http-equiv="cleartype" content="on">
+
+<!-- Load Modernizr -->
+<script src="http://scottpinkelman.com/assets/js/vendor/modernizr-2.6.2.custom.min.js"></script>
+
+<!-- Icons -->
+<!-- 16x16 -->
+<link rel="shortcut icon" href="http://scottpinkelman.com/favicon.ico">
+<!-- 32x32 -->
+<link rel="shortcut icon" href="http://scottpinkelman.com/favicon.png">
+<!-- 57x57 (precomposed) for iPhone 3GS, pre-2011 iPod Touch and older Android devices -->
+<link rel="apple-touch-icon-precomposed" href="http://scottpinkelman.com/images/apple-touch-icon-precomposed.png">
+<!-- 72x72 (precomposed) for 1st generation iPad, iPad 2 and iPad mini -->
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="http://scottpinkelman.com/images/apple-touch-icon-72x72-precomposed.png">
+<!-- 114x114 (precomposed) for iPhone 4, 4S, 5 and post-2011 iPod Touch -->
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="http://scottpinkelman.com/images/apple-touch-icon-114x114-precomposed.png">
+<!-- 144x144 (precomposed) for iPad 3rd and 4th generation -->
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://scottpinkelman.com/images/apple-touch-icon-144x144-precomposed.png">
+
+</head>
+
+<body class="article" itemscope itemtype="http://schema.org/WebPage">
+
+<!--[if lt IE 9]><div class="browser-upgrade alert alert-info">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</div><![endif]-->
+
+<div class="navigation-wrapper">
+	<div class="site-name">
+		<a href="http://scottpinkelman.com">Scott Pinkelman</a>
+	</div><!-- /.site-name -->
+	<div class="top-navigation">
+		<nav role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
+		    <ul>
+		        
+				<li><a href="http://scottpinkelman.com/about/" >About</a></li>
+		        
+				<li><a href="http://scottpinkelman.com/blog/" >Blog</a></li>
+		        
+				<li><a href="http://scottpinkelman.com/work/" >Work</a></li>
+		        
+				<li><a href="http://scottpinkelman.com/contact/" >Contact</a></li>
+		        
+		        <li><i class="icon-feed"></i> <a href="http://scottpinkelman.com/feed.xml" title="Atom/RSS feed">Feed</a>
+		    </ul>
+		</nav>
+	</div><!-- /.top-navigation -->
+</div><!-- /.navigation-wrapper -->
+
+
+
+<div id="main" role="main" itemprop="mainContentOfPage" itemscope itemtype="http://schema.org/Blog">
+  <div class="article-author-side">
+    <img src="http://scottpinkelman.com/images/bio-photo.jpg" class="bio-photo" alt="Scott Pinkelman bio photo"></a>
+<h3>Scott Pinkelman</h3>
+<p>web development, data visualization, digital literacy</p>
+<p><a href"mailto:scott@scottpinkelman.com">scott@scottpinkelman.com</a></p>
+<a href="http://twitter.com/scottpinkelman" class="author-social" target="_blank"><i class="icon-twitter"></i> Twitter</a>
+
+
+<a href="http://linkedin.com/profile/view?id=205868891" class="author-social" target="_blank"><i class="icon-linkedin"></i> LinkedIn</a>
+
+<a href="http://github.com/sco-tt/" class="author-social" target="_blank"><i class="icon-github"></i> Github</a>
+
+
+
+  </div>
+  <article itemscope itemtype="http://schema.org/BlogPosting" itemprop="blogPost">
+    <div class="headline-wrap">
+      <h1 itemprop="name">Up and Running With Mail-in-a-Box</h1>
+      <h2></h2>
+    </div><!--/ .headline-wrap -->
+    <div class="article-wrap" itemprop="text">
+      <h2 id="intro">Intro</h2>
+
+<p>I’ve been trying to learn a lot more about data security and internet privacy, which lead to the <a href="http://mailpile.is">Mailpile project</a>. I’ve set that up with a Gmail account, but I wanted to try to try to “own my data” a little bit more, so I’ve decided to host my own email with <a href="https://mailinabox.email">Mail-in-Box</a>. Running a mail server seems only <em>slightly</em> over my head, so it’s time to learn something new!</p>
+
+<p>Mail-in-a-Box has a <a href="https://mailinabox.email/guide.html">great setup guide</a> and I’m not going to pretend to duplicate that. I want to write up my experience as additional reading for people who don’t have much experience with the linux command line, or are perhaps on the fence about trying somehting like this. Personally, I find reading multiple accounts of installing software helps me feel confident about starting a project, and prepared for when things go wrong. And lucky for you, gentle reader, several things went wrong in the process! </p>
+
+<h2 id="vps">VPS</h2>
+
+<p>Mail-in-a-Box recommends a VPS with at least 1G of ram. Importantly, nothing else should be on your machine. I already have an account with <a href="http://digitalocean.com">Digital Ocean</a>, so I decided to go with them. If you starting from scratch you can see Digital Ocean’s great documentation on <a href="https://www.digitalocean.com/community/tutorials/initial-server-setup-with-ubuntu-14-04">getting started with Ubuntu 14.04</a>.</p>
+
+<p>The first thing I do is login to my Digital Ocean account panel and select a new droplet with Ubuntu 14.04 64 bit on it. It automatically adds my SSH keys, so I don’t need to be sent a root user password over email.</p>
+
+<p>I look through the mail in a box documentation and read that the droplet must be the same name as the hostname. I go to the control panel and rename it, but there’s a message that reads:</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">This will update the displayed hostname of your droplet and the automatically generated PTR
+record. It will not however modify your actual hostname inside of the system.</code></pre></div>
+
+<p>I consider going through with it, but I have a vague feeling that this is going to be an issue. More importantly, it’s so damned easy to destroy and create DO droplets, so I decide to start over. This time I name it <em>box.mydomain.com</em>.</p>
+
+<p>60 seconds later I’m back on track. I run through the <a href="https://www.digitalocean.com/community/tutorials/initial-server-setup-with-ubuntu-14-04">initial server setup</a> and disable root login (after all, what’s the point of hosting your own email if your root login gets compromised. Not so private, huh?)</p>
+
+<p>I login with root and bam, I get this error: </p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">@ WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED! 
+ IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY! 
+ Someone could be eavesdropping on you right now (man-in-the-middle attack)! 
+ It is also possible that a host key has just been changed. The fingerprint
+ for the RSA key sent by the remote host is</code></pre></div>
+
+<p><a href="https://www.digitalocean.com/community/questions/how-can-i-get-rid-of-warning-remote-host-identification-has-changed">A little research</a> tells me that since I had already generated an RSA key for this server IP address in my first droplet, I needed to clear the last line of my known_hosts file in order to access the second droplet. I decided to clear it out manually. On my locallymachine I do:</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">cd ~/.ssh
+nano know_hosts</code></pre></div>
+
+<p>and found my new droplet’s IP in the last line. I deleted the whole line <code>CTRL+K</code>, and closed and saved with <code>CTRL+x</code>.</p>
+
+<h2 id="domain">Domain</h2>
+
+<p>I’m able to login, where I run Ubuntu updates. At this point, I read through the documentation again and see that I made an error when I registered my domain. When I bought the domain, I had automatically put the Digital Ocean nameservers, thinking I was cleverly saving myself some time. Not so. The Mail-in-a-Box needs to be set up with “glue” records pointing to the IP from the hostnames. The Mail-in-a-Box <a href="https://mailinabox.email/guide.html#domain-name-configuration">DNS instructions</a> explain it more clearly than I will.</p>
+
+<h2 id="installing-mail-in-a-box">Installing Mail-in-a-Box</h2>
+
+<p>Finally, the big moment comes to install Mail-in-a-Box with the following command</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">curl -s https://mailinabox.email/bootstrap.sh | sudo bash</code></pre></div>
+
+<p>I follow the instructions and everything is smooth. Mail-in-a-Box recognizes my domain. </p>
+
+<p>I hit a snag when I set up an admin password with spaces:</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">Okay. I'm about to set up me@mydomain.com for you. This account will also
+have access to the box's control panel.
+password:</code></pre></div>
+
+<p>I enter my password, but it tells me:</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">Passwords cannot contain spaces.
+
+FAILED: tools/mail.py user make-admin me@mydomain.com
+-----------------------------------------
+That's not a user (me@mydomain.com).
+-----------------------------------------
+alias added
+added alias hostmaster@box.mydomain.com (=&gt; administrator@box.mydomain.com)
+added alias postmaster@box.mydomain.com (=&gt; administrator@box.mydomain.com)
+added alias admin@box.mydomain.com (=&gt; administrator@box.mydomain.com)</code></pre></div>
+
+<p>I run the setup script again, but the password part fails again. I end up finding the forums, where I see that I can access user controls from the command line with the following:</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">sudo tools/mail.py</code></pre></div>
+
+<p>which returns</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">Usage:
+  tools/mail.py user  (lists users)
+  tools/mail.py user add user@domain.com [password]
+  tools/mail.py user password user@domain.com [password]
+  tools/mail.py user remove user@domain.com
+  tools/mail.py user make-admin user@domain.com
+  tools/mail.py user remove-admin user@domain.com
+  tools/mail.py user admins (lists admins)
+  tools/mail.py alias  (lists aliases)
+  tools/mail.py alias add incoming.name@domain.com sent.to@other.domain.com
+  tools/mail.py alias add incoming.name@domain.com 'sent.to@other.domain.com, multiple.people@other.domain.com'
+  tools/mail.py alias remove incoming.name@domain.com</code></pre></div>
+
+<p>With these commands, things are straightforward. I add the email address I want:</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">sudo tools/mail.py user add me@mydomain.com</code></pre></div>
+
+<p>And wait for it to ask for a passowrd. I then reset the admin password. </p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">tools/mail.py user password me@box.mydomain.com [password here]</code></pre></div>
+
+<p>I end up not making my email me@mydomain.com an admin, and leaving what was set up initially (me@box.mydomain.com) </p>
+
+<p>That’s about it! All of the interface and instructions within Mail-in-a-Box are pretty clear. If you hit a snag that I managed to avoid, or want to learn more about the project, check out the <a href="https://discourse.mailinabox.email/">Mail-in-a-Box forums</a>.</p>
+
+      <hr />
+      <footer role="contentinfo">
+        <div class="article-author-bottom">
+          <img src="http://scottpinkelman.com/images/bio-photo.jpg" class="bio-photo" alt="Scott Pinkelman bio photo"></a>
+<h3>Scott Pinkelman</h3>
+<p>web development, data visualization, digital literacy</p>
+<p><a href"mailto:scott@scottpinkelman.com">scott@scottpinkelman.com</a></p>
+<a href="http://twitter.com/scottpinkelman" class="author-social" target="_blank"><i class="icon-twitter"></i> Twitter</a>
+
+
+<a href="http://linkedin.com/profile/view?id=205868891" class="author-social" target="_blank"><i class="icon-linkedin"></i> LinkedIn</a>
+
+<a href="http://github.com/sco-tt/" class="author-social" target="_blank"><i class="icon-github"></i> Github</a>
+
+
+
+        </div>
+        <p class="byline"><strong>Up and Running With Mail-in-a-Box</strong> was published on <time datetime="2014-10-18T00:00:00-04:00" itemprop="datePublished">October 18, 2014</time> and last modified on <time datetime="2014-10-18" itemprop="dateModified">October 18, 2014</time> by <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name"><a href="http://scottpinkelman.com/about" title="About Scott Pinkelman" itemprop="url">Scott Pinkelman</a></span></span>.</p>
+      </footer>
+    </div><!-- /.article-wrap -->
+  </article>
+</div><!-- /#main -->
+
+<div class="footer-wrap">
+  <div class="related-articles">
+  <h4>You might also enjoy <small class="pull-right">(<a href="http://scottpinkelman.com/articles">View all articles</a>)</small></h4>
+    <ul>
+    
+      
+      
+        
+          
+        
+      
+      
+      <li><a href="http://scottpinkelman.com/blog/google-apps-scripts-column-sorter" title="Google Sheets Column Sorter with Google Apps Scripts">Google Sheets Column Sorter with Google Apps Scripts</a></li>
+      
+    
+      
+      
+        
+          
+        
+      
+      
+      <li><a href="http://scottpinkelman.com/blog/google-apps-script-compiling-spreadsheets" title="Compiling Spreadsheets in Google Sheets">Compiling Spreadsheets in Google Sheets</a></li>
+      
+    
+      
+      
+        
+          
+        
+      
+      
+      <li><a href="http://scottpinkelman.com/blog/countifs-in-new-google-sheets" title="Using COUNTIFS in the New Google Sheets (February 2014)">Using COUNTIFS in the New Google Sheets (February 2014)</a></li>
+      
+    
+    </ul>
+    <hr />
+  </div><!-- /.related-articles -->
+  <footer>
+    <span>&copy; 2015 Scott Pinkelman. Powered by <a href="http://jekyllrb.com">Jekyll</a> using the <a href="http://mademistakes.com/">Minimal Mistakes</a> theme.</span>
+
+  </footer>
+</div><!-- /.footer-wrap -->
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="http://scottpinkelman.com/assets/js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+<script src="http://scottpinkelman.com/assets/js/scripts.min.js"></script>
+
+<!-- Asynchronous Google Analytics snippet -->
+<script>
+  var _gaq = _gaq || [];
+  var pluginUrl = 
+ '//www.google-analytics.com/plugins/ga/inpage_linkid.js';
+  _gaq.push(['_require', 'inpage_linkid', pluginUrl]);
+  _gaq.push(['_setAccount', 'UA-37962833-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+	        
+
+</body>
+</html>

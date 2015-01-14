@@ -1,0 +1,11 @@
+<p>Today I tried to convert a spreadsheet to the <a href="https://support.google.com/drive/answer/3541068?hl=en">new version of Google Sheets</a> that’s supposed to be faster and better. As I was copying over formulas, I decided to try out a new formula that Google had rolled out in this new version of sheets. It’s called COUNTIFS and it allows you do conditional counting based on mulitple sets of criteria.</p>
+
+<p>Previously, I had used the following formula to help build an easily copy-pasted set of cells for tracking users at a public computer lab. I wanted to check if a certain column had an entry in it, and count it if it was in a row with a certain date. The formula read:</p>
+<div class='highlight'><pre><code class='html'>=COUNTA( IFERROR( FILTER(N5:N300 ; SEARCH( E6 ; H5:H616 ) ) ) ) 
+</code></pre></div>
+<p>Using COUNTIFS, I was able to update it to a pleasant-looking:</p>
+<div class='highlight'><pre><code class='html'>=COUNTIFS(H5:H300, E6, N5:N300, &quot;\*&quot;)
+</code></pre></div>
+<p>Which basically says, moving backwards,: count if there’s anything (this is the variable <code>*</code>), in the N column IF in that row the value of H (a series of dates in my example) column is E6, the date we’re building <em>Daily Total For</em>.</p>
+
+<p>This isn’t news for Excel experts, but might come in handy for those (like me) who are not.</p>
