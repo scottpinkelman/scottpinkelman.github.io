@@ -1,37 +1,404 @@
----
-layout: none
----
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
-<title type="text">{{ site.title }}</title>
-<subtitle type="text">{{ site.tagline }}</subtitle>
+<title type="text">Scott Pinkelman</title>
+<subtitle type="text">web developer</subtitle>
 <generator uri="https://github.com/mojombo/jekyll">Jekyll</generator>
-<link rel="self" type="application/atom+xml" href="{{ site.url }}/feed.xml" />
-<link rel="alternate" type="text/html" href="{{ site.url }}" />
-<updated>{{ site.time | date_to_xmlschema }}</updated>
-<id>{{ site.url }}/</id>
+<link rel="self" type="application/atom+xml" href="http://scottpinkelman.com/feed.xml" />
+<link rel="alternate" type="text/html" href="http://scottpinkelman.com" />
+<updated>2015-01-20T13:44:01-05:00</updated>
+<id>http://scottpinkelman.com/</id>
 <author>
-  <name>{{ site.owner.name }}</name>
-  <uri>{{ site.url }}/</uri>
-  <email>{{ site.owner.email }}</email>
+  <name>Scott Pinkelman</name>
+  <uri>http://scottpinkelman.com/</uri>
+  <email>scott@scottpinkelman.com</email>
 </author>
-{% for post in site.posts limit:20 %}
+
 
 <entry>
-  <title type="html"><![CDATA[{{ post.title | cdata_escape }}]]></title>
-  <link rel="alternate" type="text/html" href="{{ site.url }}{{ post.url }}" />
-  <id>{{ site.url }}{{ post.id }}</id>
-  {% if post.modified %}<updated>{{ post.modified | to_xmlschema }}T00:00:00-00:00</updated>
-  <published>{{ post.date | date_to_xmlschema }}</published>
-  {% else %}<published>{{ post.date | date_to_xmlschema }}</published>
-  <updated>{{ post.date | date_to_xmlschema }}</updated>{% endif %}
+  <title type="html"><![CDATA[Google Sheets Column Sorter with Google Apps Scripts]]></title>
+  <link rel="alternate" type="text/html" href="http://scottpinkelman.com/blog/google-apps-scripts-column-sorter" />
+  <id>http://scottpinkelman.com/blog/google-apps-scripts-column-sorter</id>
+  <updated>2014-11-30T00:00:00-00:00</updated>
+  <published>2014-11-30T00:00:00-05:00</published>
+  
   <author>
-    <name>{{ site.owner.name }}</name>
-    <uri>{{ site.url }}</uri>
-    <email>{{ site.owner.email }}</email>
+    <name>Scott Pinkelman</name>
+    <uri>http://scottpinkelman.com</uri>
+    <email>scott@scottpinkelman.com</email>
   </author>
-  <content type="html">{{ post.content | xml_escape }}
-  &lt;p&gt;&lt;a href=&quot;{{ site.url }}{{ post.url }}&quot;&gt;{{ post.title }}&lt;/a&gt; was originally published by {{ site.owner.name }} at &lt;a href=&quot;{{ site.url }}&quot;&gt;{{ site.title }}&lt;/a&gt; on {{ post.date | date: "%B %d, %Y" }}.&lt;/p&gt;</content>
+  <content type="html">&lt;p&gt;I recently wrote a &lt;a href=&quot;https://gist.github.com/sco-tt/b3f07c1882ac698afc74&quot;&gt;simple two column sorter&lt;/a&gt; for Google Sheets in Google Apps Scripts. While there is an &lt;a href=&quot;https://stackoverflow.com/questions/12205908/sort-ranges-in-an-array-in-google-apps-script&quot;&gt;example of the Range.sort function on Stackoverflow&lt;/a&gt;, it’s for a slighly more complicated use case. Mine is for a very simple case: you want to do a two column sort, you have a header, and you’d like to access it from the Google Sheets mney. You can see it in action &lt;a href=&quot;https://docs.google.com/spreadsheets/d/1kXFj_m5_JoNI7gSVT9yVECFNE3dH60bSZnNOCmQYl2c/edit?pli=1#gid=0&quot;&gt;here&lt;/a&gt;. (Note: you’ll need to be signed in to a Google account and authorize the app to run in order to use the sort function.)&lt;/p&gt;
+
+&lt;p&gt;Something to keep in mind about two column sorting: the first column you sort by should be less specific than the second. In my example above, it’s for cities where multiple rows have the same value. &lt;/p&gt;
+
+&lt;p&gt;I hope that this can be used by non-technical people who need this functionality, so I’ll call attention to the five variables you’ll need to customize the script. They’re in the sort() function:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-js&quot; data-lang=&quot;js&quot;&gt;/**  Variables for customization:
+  
+  Each column to sort takes two variables: 
+      1) the column index (i.e. column A has a colum index of 1
+      2) Sort Asecnding -- default is to sort ascending. Set to false to sort descending
+  
+  **/
+ 
+  //Variable for column to sort first
+  
+  var sortFirst = 2; //index of column to be sorted by; 1 = column A, 2 = column B, etc.
+  var sortFirstAsc = true; //Set to false to sort descending
+  
+  //Variables for column to sort second
+ 
+  var sortSecond = 3;
+  var sortSecondAsc = false;
+  
+  //Number of header rows
+  
+  var headerRows = 1; 
+ 
+  /** End Variables for customization**/&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;For each column you’ll be sorting, you’ll need to enter the column index (i.e. Column B has an index of 2, Column C and index of 3) for &lt;b&gt;sortFirst&lt;/b&gt; and the &lt;b&gt;sortSecondAsc&lt;/b&gt; variables. You’ll use &lt;b&gt;sortFirstAsc&lt;/b&gt; and &lt;b&gt;sortSecondAsc&lt;/b&gt; and whether or not you want to sort it ascending. If you put false, that column will sort descending. Finally, enter the number of header rows in the &lt;b&gt;headerRows&lt;/b&gt; variable so they can be excluded from the sort. Make sure these lines end with a semicolon and you’re good to go.&lt;/p&gt;
+
+&lt;div&gt;&lt;a href=&quot;https://gist.github.com/sco-tt/b3f07c1882ac698afc74&quot; class=&quot;btn&quot;&gt;View on Github&lt;/a&gt;&lt;/div&gt;
+
+
+  &lt;p&gt;&lt;a href=&quot;http://scottpinkelman.com/blog/google-apps-scripts-column-sorter&quot;&gt;Google Sheets Column Sorter with Google Apps Scripts&lt;/a&gt; was originally published by Scott Pinkelman at &lt;a href=&quot;http://scottpinkelman.com&quot;&gt;Scott Pinkelman&lt;/a&gt; on November 30, 2014.&lt;/p&gt;</content>
 </entry>
-{% endfor %}
+
+
+<entry>
+  <title type="html"><![CDATA[Up and Running With Mail-in-a-Box]]></title>
+  <link rel="alternate" type="text/html" href="http://scottpinkelman.com/blog/up-and-running-mail-in-a-box" />
+  <id>http://scottpinkelman.com/blog/up-and-running-mail-in-a-box</id>
+  <updated>2014-10-18T00:00:00-00:00</updated>
+  <published>2014-10-18T00:00:00-04:00</published>
+  
+  <author>
+    <name>Scott Pinkelman</name>
+    <uri>http://scottpinkelman.com</uri>
+    <email>scott@scottpinkelman.com</email>
+  </author>
+  <content type="html">&lt;h2 id=&quot;intro&quot;&gt;Intro&lt;/h2&gt;
+
+&lt;p&gt;I’ve been trying to learn a lot more about data security and internet privacy, which lead to the &lt;a href=&quot;http://mailpile.is&quot;&gt;Mailpile project&lt;/a&gt;. I’ve set that up with a Gmail account, but I wanted to try to try to “own my data” a little bit more, so I’ve decided to host my own email with &lt;a href=&quot;https://mailinabox.email&quot;&gt;Mail-in-Box&lt;/a&gt;. Running a mail server seems only &lt;em&gt;slightly&lt;/em&gt; over my head, so it’s time to learn something new!&lt;/p&gt;
+
+&lt;p&gt;Mail-in-a-Box has a &lt;a href=&quot;https://mailinabox.email/guide.html&quot;&gt;great setup guide&lt;/a&gt; and I’m not going to pretend to duplicate that. I want to write up my experience as additional reading for people who don’t have much experience with the linux command line, or are perhaps on the fence about trying somehting like this. Personally, I find reading multiple accounts of installing software helps me feel confident about starting a project, and prepared for when things go wrong. And lucky for you, gentle reader, several things went wrong in the process! &lt;/p&gt;
+
+&lt;h2 id=&quot;vps&quot;&gt;VPS&lt;/h2&gt;
+
+&lt;p&gt;Mail-in-a-Box recommends a VPS with at least 1G of ram. Importantly, nothing else should be on your machine. I already have an account with &lt;a href=&quot;http://digitalocean.com&quot;&gt;Digital Ocean&lt;/a&gt;, so I decided to go with them. If you starting from scratch you can see Digital Ocean’s great documentation on &lt;a href=&quot;https://www.digitalocean.com/community/tutorials/initial-server-setup-with-ubuntu-14-04&quot;&gt;getting started with Ubuntu 14.04&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;The first thing I do is login to my Digital Ocean account panel and select a new droplet with Ubuntu 14.04 64 bit on it. It automatically adds my SSH keys, so I don’t need to be sent a root user password over email.&lt;/p&gt;
+
+&lt;p&gt;I look through the mail in a box documentation and read that the droplet must be the same name as the hostname. I go to the control panel and rename it, but there’s a message that reads:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;This will update the displayed hostname of your droplet and the automatically generated PTR
+record. It will not however modify your actual hostname inside of the system.&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;I consider going through with it, but I have a vague feeling that this is going to be an issue. More importantly, it’s so damned easy to destroy and create DO droplets, so I decide to start over. This time I name it &lt;em&gt;box.mydomain.com&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;60 seconds later I’m back on track. I run through the &lt;a href=&quot;https://www.digitalocean.com/community/tutorials/initial-server-setup-with-ubuntu-14-04&quot;&gt;initial server setup&lt;/a&gt; and disable root login (after all, what’s the point of hosting your own email if your root login gets compromised. Not so private, huh?)&lt;/p&gt;
+
+&lt;p&gt;I login with root and bam, I get this error: &lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;@ WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED! 
+ IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY! 
+ Someone could be eavesdropping on you right now (man-in-the-middle attack)! 
+ It is also possible that a host key has just been changed. The fingerprint
+ for the RSA key sent by the remote host is&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.digitalocean.com/community/questions/how-can-i-get-rid-of-warning-remote-host-identification-has-changed&quot;&gt;A little research&lt;/a&gt; tells me that since I had already generated an RSA key for this server IP address in my first droplet, I needed to clear the last line of my known_hosts file in order to access the second droplet. I decided to clear it out manually. On my locallymachine I do:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;cd ~/.ssh
+nano know_hosts&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;and found my new droplet’s IP in the last line. I deleted the whole line &lt;code&gt;CTRL+K&lt;/code&gt;, and closed and saved with &lt;code&gt;CTRL+x&lt;/code&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;domain&quot;&gt;Domain&lt;/h2&gt;
+
+&lt;p&gt;I’m able to login, where I run Ubuntu updates. At this point, I read through the documentation again and see that I made an error when I registered my domain. When I bought the domain, I had automatically put the Digital Ocean nameservers, thinking I was cleverly saving myself some time. Not so. The Mail-in-a-Box needs to be set up with “glue” records pointing to the IP from the hostnames. The Mail-in-a-Box &lt;a href=&quot;https://mailinabox.email/guide.html#domain-name-configuration&quot;&gt;DNS instructions&lt;/a&gt; explain it more clearly than I will.&lt;/p&gt;
+
+&lt;h2 id=&quot;installing-mail-in-a-box&quot;&gt;Installing Mail-in-a-Box&lt;/h2&gt;
+
+&lt;p&gt;Finally, the big moment comes to install Mail-in-a-Box with the following command&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;curl -s https://mailinabox.email/bootstrap.sh | sudo bash&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;I follow the instructions and everything is smooth. Mail-in-a-Box recognizes my domain. &lt;/p&gt;
+
+&lt;p&gt;I hit a snag when I set up an admin password with spaces:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;Okay. I'm about to set up me@mydomain.com for you. This account will also
+have access to the box's control panel.
+password:&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;I enter my password, but it tells me:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;Passwords cannot contain spaces.
+
+FAILED: tools/mail.py user make-admin me@mydomain.com
+-----------------------------------------
+That's not a user (me@mydomain.com).
+-----------------------------------------
+alias added
+added alias hostmaster@box.mydomain.com (=&amp;gt; administrator@box.mydomain.com)
+added alias postmaster@box.mydomain.com (=&amp;gt; administrator@box.mydomain.com)
+added alias admin@box.mydomain.com (=&amp;gt; administrator@box.mydomain.com)&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;I run the setup script again, but the password part fails again. I end up finding the forums, where I see that I can access user controls from the command line with the following:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;sudo tools/mail.py&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;which returns&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;Usage:
+  tools/mail.py user  (lists users)
+  tools/mail.py user add user@domain.com [password]
+  tools/mail.py user password user@domain.com [password]
+  tools/mail.py user remove user@domain.com
+  tools/mail.py user make-admin user@domain.com
+  tools/mail.py user remove-admin user@domain.com
+  tools/mail.py user admins (lists admins)
+  tools/mail.py alias  (lists aliases)
+  tools/mail.py alias add incoming.name@domain.com sent.to@other.domain.com
+  tools/mail.py alias add incoming.name@domain.com 'sent.to@other.domain.com, multiple.people@other.domain.com'
+  tools/mail.py alias remove incoming.name@domain.com&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;With these commands, things are straightforward. I add the email address I want:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;sudo tools/mail.py user add me@mydomain.com&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;And wait for it to ask for a passowrd. I then reset the admin password. &lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;tools/mail.py user password me@box.mydomain.com [password here]&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;I end up not making my email me@mydomain.com an admin, and leaving what was set up initially (me@box.mydomain.com) &lt;/p&gt;
+
+&lt;p&gt;That’s about it! All of the interface and instructions within Mail-in-a-Box are pretty clear. If you hit a snag that I managed to avoid, or want to learn more about the project, check out the &lt;a href=&quot;https://discourse.mailinabox.email/&quot;&gt;Mail-in-a-Box forums&lt;/a&gt;.&lt;/p&gt;
+
+  &lt;p&gt;&lt;a href=&quot;http://scottpinkelman.com/blog/up-and-running-mail-in-a-box&quot;&gt;Up and Running With Mail-in-a-Box&lt;/a&gt; was originally published by Scott Pinkelman at &lt;a href=&quot;http://scottpinkelman.com&quot;&gt;Scott Pinkelman&lt;/a&gt; on October 18, 2014.&lt;/p&gt;</content>
+</entry>
+
+
+<entry>
+  <title type="html"><![CDATA[Compiling Spreadsheets in Google Sheets]]></title>
+  <link rel="alternate" type="text/html" href="http://scottpinkelman.com/blog/google-apps-script-compiling-spreadsheets" />
+  <id>http://scottpinkelman.com/blog/google-apps-script-compiling-spreadsheets</id>
+  <updated>2014-09-14T00:00:00-00:00</updated>
+  <published>2014-09-14T00:00:00-04:00</published>
+  
+  <author>
+    <name>Scott Pinkelman</name>
+    <uri>http://scottpinkelman.com</uri>
+    <email>scott@scottpinkelman.com</email>
+  </author>
+  <content type="html">&lt;p&gt;At my work with the Free Library / City of Philadelphia Office of Innovation and Technology, I use Google Spreadsheets to track visitors to public computer labs. I was recently asked to come up a way of compiling 19 different spreadsheets into one master spreadsheet. I wrote a Google Apps script that copies a the current sheet’s values to a master spreadsheet (note: this doesn’t copy the the entire spreadsheet, just the currently-viewd sheet). In the master spreadsheet, the values go into one sheet where an extra column is added pulling in the names of the source spreadsheet and sheet (For my purposes these corresponded to the name of a computer lab and month of usage data). Additionally, a separate sheet in the master logs all copy operations with a timestamp. &lt;/p&gt;
+
+&lt;p&gt;Check it out &lt;a href=&quot;https://gist.github.com/sco-tt/ebfd79bc95a6bbb6881c&quot;&gt;on Github&lt;/a&gt;.&lt;/p&gt;
+
+  &lt;p&gt;&lt;a href=&quot;http://scottpinkelman.com/blog/google-apps-script-compiling-spreadsheets&quot;&gt;Compiling Spreadsheets in Google Sheets&lt;/a&gt; was originally published by Scott Pinkelman at &lt;a href=&quot;http://scottpinkelman.com&quot;&gt;Scott Pinkelman&lt;/a&gt; on September 14, 2014.&lt;/p&gt;</content>
+</entry>
+
+
+<entry>
+  <title type="html"><![CDATA[Using COUNTIFS in the New Google Sheets (February 2014)]]></title>
+  <link rel="alternate" type="text/html" href="http://scottpinkelman.com/blog/countifs-in-new-google-sheets" />
+  <id>http://scottpinkelman.com/blog/countifs-in-new-google-sheets</id>
+  <updated>2014-02-28T00:00:00-00:00</updated>
+  <published>2014-02-28T00:00:00-05:00</published>
+  
+  <author>
+    <name>Scott Pinkelman</name>
+    <uri>http://scottpinkelman.com</uri>
+    <email>scott@scottpinkelman.com</email>
+  </author>
+  <content type="html">&lt;p&gt;Today I tried to convert a spreadsheet to the  &lt;a href=&quot;https://support.google.com/drive/answer/3541068?hl=en&quot;&gt;new version of Google Sheets&lt;/a&gt; that’s supposed to be faster and better. As I was copying over formulas, I decided to try out a new formula that Google had rolled out in this new version of sheets. It’s called COUNTIFS and it allows you do conditional counting based on mulitple sets of criteria. &lt;/p&gt;
+
+&lt;p&gt;Previously, I had used the following formula to help build an easily copy-pasted set of cells for tracking users at a public computer lab. I wanted to check if a certain column had an entry in it, and count it if it was in a row with a certain date. The formula read: &lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;=COUNTA( IFERROR( FILTER(N5:N300 ; SEARCH( E6 ; H5:H616 ) ) ) )&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Using COUNTIFS, I was able to update it to a pleasant-looking:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;=COUNTIFS(H5:H300, E6, N5:N300, &amp;quot;\*&amp;quot;)&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Which basically says, moving backwards,: count if there’s anything (this is the variable &lt;code&gt;\*&lt;/code&gt;), in the N column IF in that row the value of H (a series of dates in my example) column is E6, the date we’re building &lt;em&gt;Daily Total For&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;This isn’t news for Excel experts, but might come in handy for those (like me) who are not.&lt;/p&gt;
+
+  &lt;p&gt;&lt;a href=&quot;http://scottpinkelman.com/blog/countifs-in-new-google-sheets&quot;&gt;Using COUNTIFS in the New Google Sheets (February 2014)&lt;/a&gt; was originally published by Scott Pinkelman at &lt;a href=&quot;http://scottpinkelman.com&quot;&gt;Scott Pinkelman&lt;/a&gt; on February 28, 2014.&lt;/p&gt;</content>
+</entry>
+
+
+<entry>
+  <title type="html"><![CDATA[Responsive Toggle Menu in Omega 3.x]]></title>
+  <link rel="alternate" type="text/html" href="http://scottpinkelman.com/blog/responsive-toggle-menu-omega" />
+  <id>http://scottpinkelman.com/blog/responsive-toggle-menu-omega</id>
+  <updated>2014-01-27T00:00:00-00:00</updated>
+  <published>2013-01-10T00:00:00-05:00</published>
+  
+  <author>
+    <name>Scott Pinkelman</name>
+    <uri>http://scottpinkelman.com</uri>
+    <email>scott@scottpinkelman.com</email>
+  </author>
+  <content type="html">&lt;section id=&quot;table-of-contents&quot; class=&quot;toc&quot;&gt;
+  &lt;header&gt;
+    &lt;h3&gt;Contents&lt;/h3&gt;
+  &lt;/header&gt;
+&lt;div id=&quot;drawer&quot;&gt;
+&lt;ul id=&quot;markdown-toc&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;#notes&quot;&gt;Notes&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#what-youll-need&quot;&gt;What you’ll need&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#modifying-omega-menu-template-file&quot;&gt;Modifying Omega Menu Template File&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#javascript&quot;&gt;Javascript&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#css&quot;&gt;CSS&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#customize&quot;&gt;Customize&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+  &lt;/div&gt;
+&lt;/section&gt;
+&lt;!-- /#table-of-contents --&gt;
+
+&lt;h2 id=&quot;notes&quot;&gt;Notes&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;This was made with Omega 7.x-3.1&lt;/li&gt;
+  &lt;li&gt;This only works for first level menu items. See &lt;a href=&quot;http://ivanchaquea.com/creating-responsive-menu-omega-subthemes.html&quot;&gt;this tutorial&lt;/a&gt; for multi-level menus&lt;/li&gt;
+  &lt;li&gt;There is a &lt;a href=&quot;http://demos.scottpinkelman.com/menus/&quot;&gt;demo&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;what-youll-need&quot;&gt;What you’ll need&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;An HTML5 Omega subtheme&lt;/li&gt;
+  &lt;li&gt;A text editor&lt;/li&gt;
+  &lt;li&gt;Optional: If you want to make a hip ‘Navicon’ instead of the word Menu, you’ll need the &lt;a href=&quot;http://drupal.org/project/fontyourface&quot;&gt;@font-your-face module&lt;/a&gt; and a icon from somewhere like &lt;a href=&quot;http://icomoon.io/&quot;&gt;IcoMoon&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;modifying-omega-menu-template-file&quot;&gt;Modifying Omega Menu Template File&lt;/h2&gt;
+
+&lt;p&gt;Once you’ve created an Omega HTML5 subtheme, you’ll want modify the menu template in our subtheme. First copy &lt;strong&gt;sites/all/themes/omega/omega/templates/region–menu.tpl.php&lt;/strong&gt; to
+&lt;strong&gt;sites/all/themes/SUBTHEME_NAME/templates&lt;/strong&gt;
+Open it up with a text editor. It should look like this:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-php&quot; data-lang=&quot;php&quot;&gt;&amp;lt;div&amp;lt;?php print $attributes; ?&amp;gt;&amp;gt;
+  &amp;lt;div&amp;lt;?php print $content_attributes; ?&amp;gt;&amp;gt;
+    &amp;lt;?php if ($main_menu || $secondary_menu): ?&amp;gt;
+    &amp;lt;nav class=&amp;quot;navigation&amp;quot;&amp;gt;
+      &amp;lt;?php print theme('links__system_main_menu', array('links' =&amp;gt; $main_menu, 'attributes' =&amp;gt; array('id' =&amp;gt; 'main-menu', 'class' =&amp;gt; array('links', 'inline', 'clearfix', 'main-menu')), 'heading' =&amp;gt; array('text' =&amp;gt; t('Main menu'),'level' =&amp;gt; 'h2','class' =&amp;gt; array('element-invisible')))); ?&amp;gt;
+      &amp;lt;?php print theme('links__system_secondary_menu', array('links' =&amp;gt; $secondary_menu, 'attributes' =&amp;gt; array('id' =&amp;gt; 'secondary-menu', 'class' =&amp;gt; array('links', 'inline', 'clearfix', 'secondary-menu')), 'heading' =&amp;gt; array('text' =&amp;gt; t('Secondary menu'),'level' =&amp;gt; 'h2','class' =&amp;gt; array('element-invisible')))); ?&amp;gt;
+    &amp;lt;/nav&amp;gt;
+    &amp;lt;?php endif; ?&amp;gt;
+    &amp;lt;?php print $content; ?&amp;gt;
+  &amp;lt;/div&amp;gt;
+&amp;lt;/div&amp;gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;We’ll modify the template so that we have a mobile menu toggle, and a role attribute in our main navigation menu. We’ll add the the mobile menu toggle on line 4, and adjust our tag in line 5:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;&amp;lt;a href=&amp;quot;#menu&amp;quot; class=&amp;quot;menu-link&amp;quot;&amp;gt;Menu&amp;lt;/a&amp;gt;     /*This line is added*/
+    &amp;lt;nav id=&amp;quot;menu&amp;quot; role=&amp;quot;navigation&amp;quot;&amp;gt;      /*This line is modified*/&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;So &lt;strong&gt;region–menu.tpl.php&lt;/strong&gt; will look like this:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-php&quot; data-lang=&quot;php&quot;&gt;&amp;lt;div&amp;lt;?php print $attributes; ?&amp;gt;&amp;gt;
+  &amp;lt;div&amp;lt;?php print $content_attributes; ?&amp;gt;&amp;gt;
+    &amp;lt;?php if ($main_menu || $secondary_menu): ?&amp;gt;
+    &amp;lt;a href=&amp;quot;#menu&amp;quot; class=&amp;quot;menu-link&amp;quot;&amp;gt;Menu&amp;lt;/a&amp;gt;
+    &amp;lt;nav id=&amp;quot;menu&amp;quot; role=&amp;quot;navigation&amp;quot;&amp;gt;
+      &amp;lt;?php print theme('links__system_main_menu', array('links' =&amp;gt; $main_menu, 'attributes' =&amp;gt; array('id' =&amp;gt; 'main-menu', 'class' =&amp;gt; array('links', 'inline', 'clearfix', 'main-menu')), 'heading' =&amp;gt; array('text' =&amp;gt; t('Main menu'),'level' =&amp;gt; 'h2','class' =&amp;gt; array('element-invisible')))); ?&amp;gt;
+      &amp;lt;?php print theme('links__system_secondary_menu', array('links' =&amp;gt; $secondary_menu, 'attributes' =&amp;gt; array('id' =&amp;gt; 'secondary-menu', 'class' =&amp;gt; array('links', 'inline', 'clearfix', 'secondary-menu')), 'heading' =&amp;gt; array('text' =&amp;gt; t('Secondary menu'),'level' =&amp;gt; 'h2','class' =&amp;gt; array('element-invisible')))); ?&amp;gt;
+    &amp;lt;/nav&amp;gt;
+    &amp;lt;?php endif; ?&amp;gt;
+    &amp;lt;?php print $content; ?&amp;gt;
+  &amp;lt;/div&amp;gt;
+&amp;lt;/div&amp;gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;javascript&quot;&gt;Javascript&lt;/h2&gt;
+
+&lt;p&gt;Next we’ll &lt;a href=&quot;https://drupal.org/node/304255&quot;&gt;add some javascript&lt;/a&gt; was used in the CodePen: &lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;(function ($) { 
+    $(document).ready(function($){
+      $('body').addClass('js');
+      var $menu = $('#menu'),
+        $menulink = $('.menu-link');
+       
+    $menulink.click(function() {
+      $menulink.toggleClass('active');
+      $menu.toggleClass('active');
+      return false;
+    });});
+}(jQuery));&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;I generally add it using the ‘Theme’s Info File’ method (this caches it). I do that by creating a folder in my subtheme (e.g. &lt;strong&gt;sites/all/themes/SUBTHEME_NAME/js/menu.js&lt;/strong&gt;) and then adding ‘scripts[] = js/menu.js’ to SUBTHEME_NAME.info) but you can do it however you like.&lt;/p&gt;
+
+&lt;h2 id=&quot;css&quot;&gt;CSS&lt;/h2&gt;
+
+&lt;p&gt;Finally, we’ll copy over the CSS to the global.css file.&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-css&quot; data-lang=&quot;css&quot;&gt;a.menu-link {
+float: right;
+    display: block;
+    padding: 1em;
+}
+nav[role=navigation] {
+    clear: both;
+    -webkit-transition: all 0.3s ease-out;  
+    -moz-transition: all 0.3s ease-out;
+    -ms-transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;
+}
+.js nav[role=navigation] {
+    overflow: hidden;
+    max-height: 0;
+}
+nav[role=navigation].active {
+    max-height: 15em;
+}
+nav[role=navigation] ul {
+    margin: 0;
+    padding: 0;
+    border-top: 1px solid #808080;
+}
+nav[role=navigation] li a {
+    display: block;
+    padding: 0.8em;
+    border-bottom: 1px solid #808080;
+}
+/*End Codepen Code */
+/*Reseting system style causing gray lines to show up in Toggle Menu */
+nav[role=navigation] ul.inline li {
+    padding: 0;
+}&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Then we’ll add this to &lt;strong&gt;SUBTHEME_NAME-alpha-default.css&lt;/strong&gt;&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-css&quot; data-lang=&quot;css&quot;&gt;a.menu-link {
+   display: none;
+}
+.js nav[role=navigation] {
+    max-height: none;
+}
+nav[role=navigation] ul {
+    margin: 0 0 0 -0.25em;
+    border: 0;
+}
+ 
+nav[role=navigation]  li {
+    display: inline-block;
+    margin: 0 0.25em;
+}
+nav[role=navigation] li a {
+    border: 0;
+}&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;customize&quot;&gt;Customize&lt;/h2&gt;
+
+&lt;p&gt;Clear your cache and check it out!
+If you want to use a &lt;a href=&quot;http://css-tricks.com/three-line-menu-navicon/&quot;&gt;navicon&lt;/a&gt; instead of the word “menu” you can alter the menu template accordingly. I’ve used the &lt;a href=&quot;http://drupal.org/project/iconfonts&quot;&gt;Icon font module&lt;/a&gt; to display an icon font navicon. See CSS Tricks’ &lt;a href=&quot;http://css-tricks.com/html-for-icon-font-usage/&quot;&gt;“HTML For Icon Font Usage&lt;/a&gt;&lt;/p&gt;
+
+&lt;div&gt;&lt;a href=&quot;http://demos.scottpinkelman.com/menus/&quot; class=&quot;btn&quot;&gt;View Demo&lt;/a&gt;&lt;/div&gt;
+
+  &lt;p&gt;&lt;a href=&quot;http://scottpinkelman.com/blog/responsive-toggle-menu-omega&quot;&gt;Responsive Toggle Menu in Omega 3.x&lt;/a&gt; was originally published by Scott Pinkelman at &lt;a href=&quot;http://scottpinkelman.com&quot;&gt;Scott Pinkelman&lt;/a&gt; on January 10, 2013.&lt;/p&gt;</content>
+</entry>
+
 </feed>
