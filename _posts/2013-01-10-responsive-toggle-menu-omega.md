@@ -4,7 +4,7 @@ title: Responsive Toggle Menu in Omega 3.x
 description: "How to make a responsive toggle menu in Omega 3.x"
 modified: 2014-01-27
 category: blog
-tags: [responsive design, drupal, omega, menus]
+tags: [responsive design, drupal, omega theme, menus]
 ---
 
 <section id="table-of-contents" class="toc">

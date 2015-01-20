@@ -4,7 +4,7 @@ title: Google Sheets Column Sorter with Google Apps Scripts
 description: Ready-to-use script to sort columns in Google Sheets -- for the non-coder
 modified: 2014-11-30
 category: blog
-tags: [data, google apps scripts, spreadsheets, google]
+tags: [data, google-apps-scripts, spreadsheets]
 ---
 
 

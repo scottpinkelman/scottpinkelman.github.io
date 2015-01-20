@@ -4,7 +4,7 @@ title: Using COUNTIFS in the New Google Sheets (February 2014)
 description: Working with the COUNTIFS in the new google sheets.
 modified: 2014-02-28
 category: blog
-tags: [data, google, spreadsheets]
+tags: [data, spreadsheets]
 ---
 
 Today I tried to convert a spreadsheet to the  [new version of Google Sheets](https://support.google.com/drive/answer/3541068?hl=en) that's supposed to be faster and better. As I was copying over formulas, I decided to try out a new formula that Google had rolled out in this new version of sheets. It's called COUNTIFS and it allows you do conditional counting based on mulitple sets of criteria. 

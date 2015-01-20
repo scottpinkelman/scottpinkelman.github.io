@@ -4,7 +4,7 @@ title: Up and Running With Mail-in-a-Box
 description: Impression on setting up my own mail server with Mail-in-a-Box
 modified: 2014-10-18
 category: blog
-tags: [email, privacy]
+tags: [email, privacy, sysadmin]
 ---
 
 ## Intro
