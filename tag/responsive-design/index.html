@@ -5,22 +5,22 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
 <head>
 <meta charset="utf-8">
-<title>Using COUNTIFS in the New Google Sheets (February 2014) &#8211; Scott Pinkelman</title>
-<meta name="description" content="Working with the COUNTIFS in the new google sheets.">
-<meta name="keywords" content="data, spreadsheets">
+<title>Articles tagged responsive design &#8211; Scott Pinkelman</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
 <!-- Twitter Cards -->
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://127.0.0.1:4000/images/">
-<meta name="twitter:title" content="Using COUNTIFS in the New Google Sheets (February 2014)">
-<meta name="twitter:description" content="Working with the COUNTIFS in the new google sheets.">
+<meta name="twitter:title" content="Articles tagged responsive design">
+<meta name="twitter:description" content="Things I do on computers when I'm not reading books.">
 <meta name="twitter:creator" content="@scottpinkelman">
 
 <!-- Open Graph -->
 <meta property="og:locale" content="en_US">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Using COUNTIFS in the New Google Sheets (February 2014)">
-<meta property="og:description" content="Working with the COUNTIFS in the new google sheets.">
-<meta property="og:url" content="http://127.0.0.1:4000/blog/countifs-in-new-google-sheets">
+<meta property="og:title" content="Articles tagged responsive design">
+<meta property="og:description" content="Things I do on computers when I'm not reading books.">
+<meta property="og:url" content="http://127.0.0.1:4000/tag/responsive-design/">
 <meta property="og:site_name" content="Scott Pinkelman">
 
 <!-- Webmaster Tools verfication -->
@@ -28,7 +28,7 @@
 
 
 
-<link rel="canonical" href="http://127.0.0.1:4000/blog/countifs-in-new-google-sheets">
+<link rel="canonical" href="http://127.0.0.1:4000/tag/responsive-design/">
 <link href="http://127.0.0.1:4000/feed.xml" type="application/atom+xml" rel="alternate" title="Scott Pinkelman Feed">
 
 
@@ -67,7 +67,7 @@
 
 </head>
 
-<body class="article" itemscope itemtype="http://schema.org/WebPage">
+<body class="page" itemscope itemtype="http://schema.org/WebPage">
 
 <!--[if lt IE 9]><div class="browser-upgrade alert alert-info">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</div><![endif]-->
 
@@ -95,7 +95,7 @@
 
 
 
-<div id="main" role="main" itemprop="mainContentOfPage" itemscope itemtype="http://schema.org/Blog">
+<div id="main" role="main"  itemprop="mainContentOfPage">
   <div class="article-author-side">
     <img src="http://127.0.0.1:4000/images/bio-photo.jpg" class="bio-photo" alt="Scott Pinkelman bio photo"></a>
 <h3>Scott Pinkelman</h3>
@@ -110,85 +110,21 @@
 
 
   </div>
-  <article itemscope itemtype="http://schema.org/BlogPosting" itemprop="blogPost">
-    <div class="headline-wrap">
-      <h1 itemprop="name">Using COUNTIFS in the New Google Sheets (February 2014)</h1>
-      <h2></h2>
-    </div><!--/ .headline-wrap -->
+  <article itemscope itemtype="http://schema.org/CreativeWork">
+    <h1 itemprop="name">Articles tagged responsive design</h1>
     <div class="article-wrap" itemprop="text">
-      <p>Today I tried to convert a spreadsheet to the  <a href="https://support.google.com/drive/answer/3541068?hl=en">new version of Google Sheets</a> that’s supposed to be faster and better. As I was copying over formulas, I decided to try out a new formula that Google had rolled out in this new version of sheets. It’s called COUNTIFS and it allows you do conditional counting based on mulitple sets of criteria. </p>
+      <ul class="post-list">
 
-<p>Previously, I had used the following formula to help build an easily copy-pasted set of cells for tracking users at a public computer lab. I wanted to check if a certain column had an entry in it, and count it if it was in a row with a certain date. The formula read: </p>
+  <li>
+    <a class="post-link" href="/blog/responsive-toggle-menu-omega">Responsive Toggle Menu in Omega 3.x</a> <span class="post-meta">January 10, 2013</span>
+  </li>
 
-<div class="highlight"><pre><code class="language-html" data-lang="html">=COUNTA( IFERROR( FILTER(N5:N300 ; SEARCH( E6 ; H5:H616 ) ) ) )</code></pre></div>
-
-<p>Using COUNTIFS, I was able to update it to a pleasant-looking:</p>
-
-<div class="highlight"><pre><code class="language-html" data-lang="html">=COUNTIFS(H5:H300, E6, N5:N300, &quot;\*&quot;)</code></pre></div>
-
-<p>Which basically says, moving backwards,: count if there’s anything (this is the variable <code>\*</code>), in the N column IF in that row the value of H (a series of dates in my example) column is E6, the date we’re building <em>Daily Total For</em>.</p>
-
-<p>This isn’t news for Excel experts, but might come in handy for those (like me) who are not.</p>
-
-      <hr />
-      <footer role="contentinfo">
-        <div class="article-author-bottom">
-          <img src="http://127.0.0.1:4000/images/bio-photo.jpg" class="bio-photo" alt="Scott Pinkelman bio photo"></a>
-<h3>Scott Pinkelman</h3>
-<p>web development, data visualization, digital literacy</p>
-<a href="http://twitter.com/scottpinkelman" class="author-social" target="_blank"><i class="icon-twitter"></i> Twitter</a>
-
-
-<a href="http://linkedin.com/profile/view?id=205868891" class="author-social" target="_blank"><i class="icon-linkedin"></i> LinkedIn</a>
-
-<a href="http://github.com/sco-tt/" class="author-social" target="_blank"><i class="icon-github"></i> Github</a>
-
-
-
-        </div>
-      </footer>
+</ul>
     </div><!-- /.article-wrap -->
   </article>
-</div><!-- /#main -->
+</div><!-- /#index -->
 
 <div class="footer-wrap">
-  <div class="related-articles">
-  <h4>You might also enjoy <small class="pull-right">(<a href="http://127.0.0.1:4000/blog">View all articles</a>)</small></h4>
-    <ul>
-    
-      
-      
-        
-          
-        
-      
-      
-      <li><a href="http://127.0.0.1:4000/blog/google-apps-scripts-column-sorter" title="Google Sheets Column Sorter with Google Apps Scripts">Google Sheets Column Sorter with Google Apps Scripts</a></li>
-      
-    
-      
-      
-        
-          
-        
-      
-      
-      <li><a href="http://127.0.0.1:4000/blog/up-and-running-mail-in-a-box" title="Up and Running With Mail-in-a-Box">Up and Running With Mail-in-a-Box</a></li>
-      
-    
-      
-      
-        
-          
-        
-      
-      
-      <li><a href="http://127.0.0.1:4000/blog/google-apps-script-compiling-spreadsheets" title="Compiling Spreadsheets in Google Sheets">Compiling Spreadsheets in Google Sheets</a></li>
-      
-    
-    </ul>
-    <hr />
-  </div><!-- /.related-articles -->
   <footer>
     <span>&copy; 2015 Scott Pinkelman. Powered by <a href="http://jekyllrb.com">Jekyll</a> using the <a href="http://mademistakes.com/">Minimal Mistakes</a> theme.</span>
 
@@ -214,7 +150,7 @@
     var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
   })();
 </script>
-	        
+          
 
 </body>
 </html>
