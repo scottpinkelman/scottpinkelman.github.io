@@ -1,28 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-        <loc>http://127.0.0.1:4000</loc>
+        <loc>http://scottpinkelman.com</loc>
     </url>
     
     
     <url>
-        <loc>http://127.0.0.1:4000/blog/google-apps-scripts-column-sorter</loc>
+        <loc>http://scottpinkelman.com/blog/google-apps-scripts-column-sorter</loc>
     </url>
     
     <url>
-        <loc>http://127.0.0.1:4000/blog/up-and-running-mail-in-a-box</loc>
+        <loc>http://scottpinkelman.com/blog/up-and-running-mail-in-a-box</loc>
     </url>
     
     <url>
-        <loc>http://127.0.0.1:4000/blog/google-apps-script-compiling-spreadsheets</loc>
+        <loc>http://scottpinkelman.com/blog/google-apps-script-compiling-spreadsheets</loc>
     </url>
     
     <url>
-        <loc>http://127.0.0.1:4000/blog/countifs-in-new-google-sheets</loc>
+        <loc>http://scottpinkelman.com/blog/countifs-in-new-google-sheets</loc>
     </url>
     
     <url>
-        <loc>http://127.0.0.1:4000/blog/responsive-toggle-menu-omega</loc>
+        <loc>http://scottpinkelman.com/blog/responsive-toggle-menu-omega</loc>
     </url>
     
 </urlset>
