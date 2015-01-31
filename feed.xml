@@ -3,27 +3,27 @@
 <title type="text">Scott Pinkelman</title>
 <subtitle type="text">web developer</subtitle>
 <generator uri="https://github.com/mojombo/jekyll">Jekyll</generator>
-<link rel="self" type="application/atom+xml" href="http://scottpinkelman.com/feed.xml" />
-<link rel="alternate" type="text/html" href="http://scottpinkelman.com" />
-<updated>2015-01-26T14:55:04-05:00</updated>
-<id>http://scottpinkelman.com/</id>
+<link rel="self" type="application/atom+xml" href="http://www.scottpinkelman.com/feed.xml" />
+<link rel="alternate" type="text/html" href="http://www.scottpinkelman.com" />
+<updated>2015-01-31T13:38:13-05:00</updated>
+<id>http://www.scottpinkelman.com/</id>
 <author>
   <name>Scott Pinkelman</name>
-  <uri>http://scottpinkelman.com/</uri>
+  <uri>http://www.scottpinkelman.com/</uri>
   <email>scott@scottpinkelman.com</email>
 </author>
 
 
 <entry>
   <title type="html"><![CDATA[Google Sheets Column Sorter with Google Apps Scripts]]></title>
-  <link rel="alternate" type="text/html" href="http://scottpinkelman.com/blog/google-apps-scripts-column-sorter" />
-  <id>http://scottpinkelman.com/blog/google-apps-scripts-column-sorter</id>
+  <link rel="alternate" type="text/html" href="http://www.scottpinkelman.com/blog/google-apps-scripts-column-sorter" />
+  <id>http://www.scottpinkelman.com/blog/google-apps-scripts-column-sorter</id>
   <updated>2014-11-30T00:00:00-00:00</updated>
   <published>2014-11-30T00:00:00-05:00</published>
   
   <author>
     <name>Scott Pinkelman</name>
-    <uri>http://scottpinkelman.com</uri>
+    <uri>http://www.scottpinkelman.com</uri>
     <email>scott@scottpinkelman.com</email>
   </author>
   <content type="html">&lt;p&gt;I recently wrote a &lt;a href=&quot;https://gist.github.com/sco-tt/b3f07c1882ac698afc74&quot;&gt;simple two column sorter&lt;/a&gt; for Google Sheets in Google Apps Scripts. While there is an &lt;a href=&quot;https://stackoverflow.com/questions/12205908/sort-ranges-in-an-array-in-google-apps-script&quot;&gt;example of the Range.sort function on Stackoverflow&lt;/a&gt;, it’s for a slighly more complicated use case. Mine is for a very simple case: you want to do a two column sort, you have a header, and you’d like to access it from the Google Sheets mney. You can see it in action &lt;a href=&quot;https://docs.google.com/spreadsheets/d/1kXFj_m5_JoNI7gSVT9yVECFNE3dH60bSZnNOCmQYl2c/edit?pli=1#gid=0&quot;&gt;here&lt;/a&gt;. (Note: you’ll need to be signed in to a Google account and authorize the app to run in order to use the sort function.)&lt;/p&gt;
@@ -61,20 +61,20 @@
 &lt;div&gt;&lt;a href=&quot;https://gist.github.com/sco-tt/b3f07c1882ac698afc74&quot; class=&quot;btn&quot;&gt;View on Github&lt;/a&gt;&lt;/div&gt;
 
 
-  &lt;p&gt;&lt;a href=&quot;http://scottpinkelman.com/blog/google-apps-scripts-column-sorter&quot;&gt;Google Sheets Column Sorter with Google Apps Scripts&lt;/a&gt; was originally published by Scott Pinkelman at &lt;a href=&quot;http://scottpinkelman.com&quot;&gt;Scott Pinkelman&lt;/a&gt; on November 30, 2014.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http://www.scottpinkelman.com/blog/google-apps-scripts-column-sorter&quot;&gt;Google Sheets Column Sorter with Google Apps Scripts&lt;/a&gt; was originally published by Scott Pinkelman at &lt;a href=&quot;http://www.scottpinkelman.com&quot;&gt;Scott Pinkelman&lt;/a&gt; on November 30, 2014.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[Up and Running With Mail-in-a-Box]]></title>
-  <link rel="alternate" type="text/html" href="http://scottpinkelman.com/blog/up-and-running-mail-in-a-box" />
-  <id>http://scottpinkelman.com/blog/up-and-running-mail-in-a-box</id>
+  <link rel="alternate" type="text/html" href="http://www.scottpinkelman.com/blog/up-and-running-mail-in-a-box" />
+  <id>http://www.scottpinkelman.com/blog/up-and-running-mail-in-a-box</id>
   <updated>2014-10-18T00:00:00-00:00</updated>
   <published>2014-10-18T00:00:00-04:00</published>
   
   <author>
     <name>Scott Pinkelman</name>
-    <uri>http://scottpinkelman.com</uri>
+    <uri>http://www.scottpinkelman.com</uri>
     <email>scott@scottpinkelman.com</email>
   </author>
   <content type="html">&lt;h2 id=&quot;intro&quot;&gt;Intro&lt;/h2&gt;
@@ -175,40 +175,40 @@ added alias admin@box.mydomain.com (=&amp;gt; administrator@box.mydomain.com)&lt
 
 &lt;p&gt;That’s about it! All of the interface and instructions within Mail-in-a-Box are pretty clear. If you hit a snag that I managed to avoid, or want to learn more about the project, check out the &lt;a href=&quot;https://discourse.mailinabox.email/&quot;&gt;Mail-in-a-Box forums&lt;/a&gt;.&lt;/p&gt;
 
-  &lt;p&gt;&lt;a href=&quot;http://scottpinkelman.com/blog/up-and-running-mail-in-a-box&quot;&gt;Up and Running With Mail-in-a-Box&lt;/a&gt; was originally published by Scott Pinkelman at &lt;a href=&quot;http://scottpinkelman.com&quot;&gt;Scott Pinkelman&lt;/a&gt; on October 18, 2014.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http://www.scottpinkelman.com/blog/up-and-running-mail-in-a-box&quot;&gt;Up and Running With Mail-in-a-Box&lt;/a&gt; was originally published by Scott Pinkelman at &lt;a href=&quot;http://www.scottpinkelman.com&quot;&gt;Scott Pinkelman&lt;/a&gt; on October 18, 2014.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[Compiling Spreadsheets in Google Sheets]]></title>
-  <link rel="alternate" type="text/html" href="http://scottpinkelman.com/blog/google-apps-script-compiling-spreadsheets" />
-  <id>http://scottpinkelman.com/blog/google-apps-script-compiling-spreadsheets</id>
+  <link rel="alternate" type="text/html" href="http://www.scottpinkelman.com/blog/google-apps-script-compiling-spreadsheets" />
+  <id>http://www.scottpinkelman.com/blog/google-apps-script-compiling-spreadsheets</id>
   <updated>2014-09-14T00:00:00-00:00</updated>
   <published>2014-09-14T00:00:00-04:00</published>
   
   <author>
     <name>Scott Pinkelman</name>
-    <uri>http://scottpinkelman.com</uri>
+    <uri>http://www.scottpinkelman.com</uri>
     <email>scott@scottpinkelman.com</email>
   </author>
   <content type="html">&lt;p&gt;At my work with the Free Library / City of Philadelphia Office of Innovation and Technology, I use Google Spreadsheets to track visitors to public computer labs. I was recently asked to come up a way of compiling 19 different spreadsheets into one master spreadsheet. I wrote a Google Apps script that copies a the current sheet’s values to a master spreadsheet (note: this doesn’t copy the the entire spreadsheet, just the currently-viewd sheet). In the master spreadsheet, the values go into one sheet where an extra column is added pulling in the names of the source spreadsheet and sheet (For my purposes these corresponded to the name of a computer lab and month of usage data). Additionally, a separate sheet in the master logs all copy operations with a timestamp. &lt;/p&gt;
 
 &lt;p&gt;Check it out &lt;a href=&quot;https://gist.github.com/sco-tt/ebfd79bc95a6bbb6881c&quot;&gt;on Github&lt;/a&gt;.&lt;/p&gt;
 
-  &lt;p&gt;&lt;a href=&quot;http://scottpinkelman.com/blog/google-apps-script-compiling-spreadsheets&quot;&gt;Compiling Spreadsheets in Google Sheets&lt;/a&gt; was originally published by Scott Pinkelman at &lt;a href=&quot;http://scottpinkelman.com&quot;&gt;Scott Pinkelman&lt;/a&gt; on September 14, 2014.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http://www.scottpinkelman.com/blog/google-apps-script-compiling-spreadsheets&quot;&gt;Compiling Spreadsheets in Google Sheets&lt;/a&gt; was originally published by Scott Pinkelman at &lt;a href=&quot;http://www.scottpinkelman.com&quot;&gt;Scott Pinkelman&lt;/a&gt; on September 14, 2014.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[Using COUNTIFS in the New Google Sheets (February 2014)]]></title>
-  <link rel="alternate" type="text/html" href="http://scottpinkelman.com/blog/countifs-in-new-google-sheets" />
-  <id>http://scottpinkelman.com/blog/countifs-in-new-google-sheets</id>
+  <link rel="alternate" type="text/html" href="http://www.scottpinkelman.com/blog/countifs-in-new-google-sheets" />
+  <id>http://www.scottpinkelman.com/blog/countifs-in-new-google-sheets</id>
   <updated>2014-02-28T00:00:00-00:00</updated>
   <published>2014-02-28T00:00:00-05:00</published>
   
   <author>
     <name>Scott Pinkelman</name>
-    <uri>http://scottpinkelman.com</uri>
+    <uri>http://www.scottpinkelman.com</uri>
     <email>scott@scottpinkelman.com</email>
   </author>
   <content type="html">&lt;p&gt;Today I tried to convert a spreadsheet to the  &lt;a href=&quot;https://support.google.com/drive/answer/3541068?hl=en&quot;&gt;new version of Google Sheets&lt;/a&gt; that’s supposed to be faster and better. As I was copying over formulas, I decided to try out a new formula that Google had rolled out in this new version of sheets. It’s called COUNTIFS and it allows you do conditional counting based on mulitple sets of criteria. &lt;/p&gt;
@@ -225,20 +225,20 @@ added alias admin@box.mydomain.com (=&amp;gt; administrator@box.mydomain.com)&lt
 
 &lt;p&gt;This isn’t news for Excel experts, but might come in handy for those (like me) who are not.&lt;/p&gt;
 
-  &lt;p&gt;&lt;a href=&quot;http://scottpinkelman.com/blog/countifs-in-new-google-sheets&quot;&gt;Using COUNTIFS in the New Google Sheets (February 2014)&lt;/a&gt; was originally published by Scott Pinkelman at &lt;a href=&quot;http://scottpinkelman.com&quot;&gt;Scott Pinkelman&lt;/a&gt; on February 28, 2014.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http://www.scottpinkelman.com/blog/countifs-in-new-google-sheets&quot;&gt;Using COUNTIFS in the New Google Sheets (February 2014)&lt;/a&gt; was originally published by Scott Pinkelman at &lt;a href=&quot;http://www.scottpinkelman.com&quot;&gt;Scott Pinkelman&lt;/a&gt; on February 28, 2014.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[Responsive Toggle Menu in Omega 3.x]]></title>
-  <link rel="alternate" type="text/html" href="http://scottpinkelman.com/blog/responsive-toggle-menu-omega" />
-  <id>http://scottpinkelman.com/blog/responsive-toggle-menu-omega</id>
+  <link rel="alternate" type="text/html" href="http://www.scottpinkelman.com/blog/responsive-toggle-menu-omega" />
+  <id>http://www.scottpinkelman.com/blog/responsive-toggle-menu-omega</id>
   <updated>2014-01-27T00:00:00-00:00</updated>
   <published>2013-01-10T00:00:00-05:00</published>
   
   <author>
     <name>Scott Pinkelman</name>
-    <uri>http://scottpinkelman.com</uri>
+    <uri>http://www.scottpinkelman.com</uri>
     <email>scott@scottpinkelman.com</email>
   </author>
   <content type="html">&lt;section id=&quot;table-of-contents&quot; class=&quot;toc&quot;&gt;
@@ -398,7 +398,7 @@ If you want to use a &lt;a href=&quot;http://css-tricks.com/three-line-menu-navi
 
 &lt;div&gt;&lt;a href=&quot;http://demos.scottpinkelman.com/menus/&quot; class=&quot;btn&quot;&gt;View Demo&lt;/a&gt;&lt;/div&gt;
 
-  &lt;p&gt;&lt;a href=&quot;http://scottpinkelman.com/blog/responsive-toggle-menu-omega&quot;&gt;Responsive Toggle Menu in Omega 3.x&lt;/a&gt; was originally published by Scott Pinkelman at &lt;a href=&quot;http://scottpinkelman.com&quot;&gt;Scott Pinkelman&lt;/a&gt; on January 10, 2013.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http://www.scottpinkelman.com/blog/responsive-toggle-menu-omega&quot;&gt;Responsive Toggle Menu in Omega 3.x&lt;/a&gt; was originally published by Scott Pinkelman at &lt;a href=&quot;http://www.scottpinkelman.com&quot;&gt;Scott Pinkelman&lt;/a&gt; on January 10, 2013.&lt;/p&gt;</content>
 </entry>
 
 </feed>
