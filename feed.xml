@@ -5,7 +5,7 @@
 <generator uri="https://github.com/mojombo/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="http://www.scottpinkelman.com/feed.xml" />
 <link rel="alternate" type="text/html" href="http://www.scottpinkelman.com" />
-<updated>2015-02-01T09:19:24-05:00</updated>
+<updated>2015-02-01T13:59:54-05:00</updated>
 <id>http://www.scottpinkelman.com/</id>
 <author>
   <name>Scott Pinkelman</name>
@@ -226,6 +226,89 @@ added alias admin@box.mydomain.com (=&amp;gt; administrator@box.mydomain.com)&lt
 &lt;p&gt;This isn’t news for Excel experts, but might come in handy for those (like me) who are not.&lt;/p&gt;
 
   &lt;p&gt;&lt;a href=&quot;http://www.scottpinkelman.com/blog/countifs-in-new-google-sheets&quot;&gt;Using COUNTIFS in the New Google Sheets (February 2014)&lt;/a&gt; was originally published by Scott Pinkelman at &lt;a href=&quot;http://www.scottpinkelman.com&quot;&gt;Scott Pinkelman&lt;/a&gt; on February 28, 2014.&lt;/p&gt;</content>
+</entry>
+
+
+<entry>
+  <title type="html"><![CDATA[JobScout and Digital Literacy for Job Seekers]]></title>
+  <link rel="alternate" type="text/html" href="http://www.scottpinkelman.com/blog/jobscout-digital-literacy-job-seekers" />
+  <id>http://www.scottpinkelman.com/blog/jobscout-digital-literacy-job-seekers</id>
+  <updated>2014-11-30T00:00:00-00:00</updated>
+  <published>2014-02-01T00:00:00-05:00</published>
+  
+  <author>
+    <name>Scott Pinkelman</name>
+    <uri>http://www.scottpinkelman.com</uri>
+    <email>scott@scottpinkelman.com</email>
+  </author>
+  <content type="html">&lt;h2 id=&quot;the-challenge-of-teaching-job-seekers&quot;&gt;The Challenge of Teaching Job Seekers&lt;/h2&gt;
+
+&lt;p&gt;Much of my work at the City of Philadelphia’s Office of Innovation and Technology involves helping job seekers at public access computer labs, most of which are located in Philadelphia’s poorest neighborhoods. Many lab visitors have a) little to no computer knowledge, b) are looking for a job, or c) all of the above. While this blog post focuses on the challenges of teaching job seekers, one issue applies to any type of public technology education. I’ll call this Problem #0:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Limited and Inconsistent Availability:&lt;/strong&gt; These computer labs are open access, “drop-in” locations, so any instruction involves a set problems such widely varying skill levels, limited time for a given instruction session, and inconsistent longer-term availability for follow-up instruction. Many people don’t have computers or internet access at home. &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;These problems are substantial enough when when teaching someone how to type. When teaching someone how to look for a job, the challenges multiply. I’ll name four:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;The Pain of Unemployment:&lt;/strong&gt; People need a job &lt;em&gt;yesterday&lt;/em&gt;. Many people looking for a job feel a level of stress and anxiety; people who are experiencing long-term unemployment might feel hopeless. Those with limited digital literacy who are desperate for a job will start clicking and entering information on any screen that seems like it might lead to a job, which leads me to Problem #2:&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;A Hostile Online Environment:&lt;/strong&gt; While major job sites like Indeed.com commercialize job listings with discrete advertising and paid promotions, others seek take advantage of job seekers. A few of the most aggravating are: aggressive information collection, &lt;a href=&quot;http://www.huffingtonpost.com/davidhalperin/for-profit-college-market_b_6213896.html&quot;&gt;steering people to sign up for for-profit colleges&lt;/a&gt;, and paid-but-not-clearly-advertised-as-such resume builders. &lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Multiple Skills Required:&lt;/strong&gt; The phrase “looking for a job online” masks the &lt;em&gt;many&lt;/em&gt; of distinct “hard” and “soft” skills needed to find a job: Typing, writing, remembering, searching, interpreting, talking, interviewing, corresponding.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;The Need for Efficiency and Focus&lt;/strong&gt;: In order to find a job, a visitor will almost certainly need to apply for more than one job. Therefore, efficiency and all the skills that implies (typing, clicking through applications, keeping track of applications) are vital. However, &lt;em&gt;efficiency&lt;/em&gt; is not the same thing as &lt;em&gt;volume&lt;/em&gt;, so successful job seekers will need to discriminate between job postings and apply for the ones they’re most likely to receive.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;enter-jobscout&quot;&gt;Enter JobScout&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://myjobscout.org&quot;&gt;JobScout&lt;/a&gt; is an online learning platform for job seekers available through the web and mobile apps. Using a series of self-directed lessons, JobScout teaches people the internet skills they’ll need to find a job, from the basics like email and search engines, to intermediate topics such as resumes and online applications. Later lessons cover advanced topics such as online networking, interview preparation, and freelancing. Users can jump at any point in the course material according to their skill level and interests. JobScout also includes customizable job listings and a resume builder.&lt;/p&gt;
+
+&lt;p&gt;By using a self-directed learning resource, JobScout helps sidestep the problem of limited time by leaving people with an account they can come back to. JobScout makes it as easy as possible for people to come back. In addition to the quality content (more on that later), JobScout has an attractive, modern website design that’s above average for online digital literacy resources. &lt;/p&gt;
+
+&lt;p&gt;JobScout’s account creation process shows an consideration of low-digital literacy users that I haven’t seen anywhere else. It’s worthy of explanation in itself: 1) Users enter a username, which is automatically checked against their database, and they’re notified if it has been taken or is available. 2) Users enter a passphrase; a prompt suggests three random works and gives the example of &lt;em&gt;trees jumping acorns&lt;/em&gt;. The passphrase appears in the text field as plain text. 3) The user is directed to a confirmation page that repeats their username and password. They are reminded to write down the username and password, and given options to confirm and create an account or go back. &lt;/p&gt;
+
+&lt;p&gt;For experienced computer users this seems unnecessary, but for beginning comptuer users this is incredibly helpful. As a digital literacy professional, I spend &lt;em&gt;a lot&lt;/em&gt; of time helping people with account creation and password recovery, and it’s great to see such consideration for the experience of low-digital literacy users.&lt;/p&gt;
+
+&lt;p&gt;All of this makes JobScout a great introduction to online learning. It’s simple and well-designed, and with the help of an instructor, beginning computer users can learn their way around the interface pretty quickly. This could allow them to move onto more complicated online learning libraries and MOOCs, which—for better or worse-seem to the new trend in our education system.&lt;/p&gt;
+
+&lt;h2 id=&quot;content&quot;&gt;Content&lt;/h2&gt;
+
+&lt;p&gt;JobScout’s content is what makes the platform such an amazing resource for job seekers of any skill level. I’ll name what I see as the platform’s three best strengths:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Solid Internet Basics:&lt;/strong&gt; The site covers the basics of the Internet and search engines in a way that gives basic users the tools to get started as well as a basic understanding of how the internet works.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Job seeking in the 21st Century:&lt;/strong&gt; Much of the content covers how to deal with online applications, job aggregation sites, and how to stand out online using Twitter and LinkedIn. On a fundemental level, JobScout’s curriculum design has considered ongoing &lt;a href=&quot;https://www.psychologytoday.com/blog/wired-success/201307/the-end-careers-we-know-them&quot;&gt;changes in the nature of work in the 21st century&lt;/a&gt;, namely the shift from “careers” to “jobs.” This includes lessons on non-traditional but increasingly-popular job resources like Craigslist, Elance, and Etsy. While &lt;a href=&quot;http://techcrunch.com/2013/01/28/building-digital-literacy-jobscout-brings-its-online-learning-platform-to-ios-to-teach-you-how-to-find-a-job/&quot;&gt;this article&lt;/a&gt; indicates that “JobScout is particularly geared towards Millenials,” the lessons apply to older adults who are more interested in “jobs” than “careers.” For many visitors I find this approach more practical than resources that begin with career interest surveys.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Stress on Efficiency and Networking:&lt;/strong&gt; JobScout’s focus on the “hard” skills of processing information and filling out application makes job seekers more efficient by helping them get more applications submitted. By focusing on skills, the platform stresses efficiency implicitly, and avoids discouraging people by reminding that they’ll be rejected for countless applications before they land a job. That said, there’s plenty of focus on “soft” skills, particularly online and in-person networking as well as professional email etiquette.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;my-wishlist&quot;&gt;My Wishlist&lt;/h2&gt;
+
+&lt;p&gt;JobScout has a wealth of content and resources that makes it a nearly all-in-one stop for low digital literacy job seekers. I hope that the platform continues to grow to meet the ever-changing digital landscape for job seekers. A few things I’d like to see:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Video:&lt;/strong&gt; I think JobScout made a good decision to base their materials on text: materials can be printed and the site will work on slow internet connections. Nevertheless, supplemental videos, particularly screencasts, would be a nice addition. &lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Apps:&lt;/strong&gt;While I haven’t spent much time with the Android and iOS apps, they aren’t quite as fantastically beautiful and functional as the website. I hope future releases of the apps close the gap.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+
+  &lt;p&gt;&lt;a href=&quot;http://www.scottpinkelman.com/blog/jobscout-digital-literacy-job-seekers&quot;&gt;JobScout and Digital Literacy for Job Seekers&lt;/a&gt; was originally published by Scott Pinkelman at &lt;a href=&quot;http://www.scottpinkelman.com&quot;&gt;Scott Pinkelman&lt;/a&gt; on February 01, 2014.&lt;/p&gt;</content>
 </entry>
 
 
