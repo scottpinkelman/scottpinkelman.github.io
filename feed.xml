@@ -5,7 +5,7 @@
 <generator uri="https://github.com/mojombo/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="/feed.xml" />
 <link rel="alternate" type="text/html" href="" />
-<updated>2015-02-02T07:16:01-05:00</updated>
+<updated>2015-02-03T06:42:39-05:00</updated>
 <id>/</id>
 <author>
   <name>Scott Pinkelman</name>
@@ -59,6 +59,13 @@
 
 &lt;p&gt;JobScout’s account creation process shows an consideration of low-digital literacy users that I haven’t seen anywhere else. It’s worthy of explanation in itself: 1) Users enter a username, which is automatically checked against their database, and they’re notified if it has been taken or is available. 2) Users enter a passphrase; a prompt suggests three random works and gives the example of &lt;em&gt;trees jumping acorns&lt;/em&gt;. The passphrase appears in the text field as plain text. 3) The user is directed to a confirmation page that repeats their username and password. They are reminded to write down the username and password, and given options to confirm and create an account or go back. &lt;/p&gt;
 
+&lt;figure&gt;
+	&lt;a href=&quot;/images/jobscout_login1_large.png&quot; class=&quot;image-popup&quot;&gt;&lt;img src=&quot;/images/jobscout_login1.png&quot; /&gt;&lt;/a&gt;
+	&lt;a href=&quot;/images/jobscout_login2_large.png&quot; class=&quot;image-popup&quot;&gt;&lt;img src=&quot;/images/jobscout_login2.png&quot; /&gt;&lt;/a&gt;
+	&lt;figcaption&gt;User experience design for computer beginners&lt;/figcaption&gt;
+	&lt;br /&gt;
+&lt;/figure&gt;
+
 &lt;p&gt;For experienced computer users this seems unnecessary, but for beginning comptuer users this is incredibly helpful. As a digital literacy professional, I spend &lt;em&gt;a lot&lt;/em&gt; of time helping people with account creation and password recovery, and it’s great to see such consideration for the experience of low-digital literacy users.&lt;/p&gt;
 
 &lt;p&gt;All of this makes JobScout a great introduction to online learning. It’s simple and well-designed, and with the help of an instructor, beginning computer users can learn their way around the interface pretty quickly. This could allow them to move onto more complicated online learning libraries and MOOCs, which—for better or worse-seem to the new trend in our education system.&lt;/p&gt;
@@ -91,7 +98,6 @@
     &lt;p&gt;&lt;strong&gt;Apps:&lt;/strong&gt;While I haven’t spent much time with the Android and iOS apps, they aren’t quite as fantastically beautiful and functional as the website. I hope future releases of the apps close the gap.&lt;/p&gt;
   &lt;/li&gt;
 &lt;/ol&gt;
-
 
   &lt;p&gt;&lt;a href=&quot;/blog/jobscout-digital-literacy-job-seekers&quot;&gt;JobScout and Digital Literacy for Job Seekers&lt;/a&gt; was originally published by Scott Pinkelman at &lt;a href=&quot;&quot;&gt;Scott Pinkelman&lt;/a&gt; on February 01, 2015.&lt;/p&gt;</content>
 </entry>
