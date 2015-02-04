@@ -5,7 +5,7 @@
 <generator uri="https://github.com/mojombo/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="/feed.xml" />
 <link rel="alternate" type="text/html" href="" />
-<updated>2015-02-04T10:06:15-05:00</updated>
+<updated>2015-02-04T10:07:05-05:00</updated>
 <id>/</id>
 <author>
   <name>Scott Pinkelman</name>
@@ -57,7 +57,7 @@
 
 &lt;p&gt;By using a self-directed learning resource, JobScout helps sidestep the problem of limited time by leaving people with an account they can come back to. JobScout makes it as easy as possible for people to come back. In addition to the quality content (more on that later), JobScout has an attractive, modern website design that’s above average for online digital literacy resources. &lt;/p&gt;
 
-&lt;p&gt;JobScout’s account creation process shows a consideration of low-digital literacy users that I haven’t seen anywhere else. It’s worthy of explanation in itself: 1) Users enter a username, which is automatically checked against their database, and they’re notified if it has been taken or is available. 2) Users enter a passphrase; a prompt suggests three random works and gives the example of &lt;em&gt;trees jumping acorns&lt;/em&gt;. The passphrase appears in the text field as plain text. 3) The user is directed to a confirmation page that repeats their username and password. They are reminded to write down the username and password, and given options to confirm and create an account or go back. &lt;/p&gt;
+&lt;p&gt;JobScout’s account creation process shows a level of consideration of low-digital literacy users that I haven’t seen anywhere else. It’s worthy of explanation in itself: 1) Users enter a username, which is automatically checked against their database, and they’re notified if it has been taken or is available. 2) Users enter a passphrase; a prompt suggests three random works and gives the example of &lt;em&gt;trees jumping acorns&lt;/em&gt;. The passphrase appears in the text field as plain text. 3) The user is directed to a confirmation page that repeats their username and password. They are reminded to write down the username and password, and given options to confirm and create an account or go back. &lt;/p&gt;
 
 &lt;figure&gt;
 	&lt;a href=&quot;/images/jobscout_login1_large.png&quot; class=&quot;image-popup&quot;&gt;&lt;img src=&quot;/images/jobscout_login1.png&quot; /&gt;&lt;/a&gt;
