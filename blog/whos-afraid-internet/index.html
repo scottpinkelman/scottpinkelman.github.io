@@ -5,22 +5,22 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
 <head>
 <meta charset="utf-8">
-<title>Using COUNTIFS in the New Google Sheets (February 2014) &#8211; Scott Pinkelman</title>
-<meta name="description" content="Working with the COUNTIFS in the new google sheets.">
-<meta name="keywords" content="data, spreadsheets">
+<title>Who's Afraid of the Internet? &#8211; Scott Pinkelman</title>
+<meta name="description" content="Digital Literacy, Corporate Data-Mining, and Government Surveillance">
+<meta name="keywords" content="digital literacy, privacy">
 <!-- Twitter Cards -->
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://www.scottpinkelman.com/images/">
-<meta name="twitter:title" content="Using COUNTIFS in the New Google Sheets (February 2014)">
-<meta name="twitter:description" content="Working with the COUNTIFS in the new google sheets.">
+<meta name="twitter:title" content="Who's Afraid of the Internet?">
+<meta name="twitter:description" content="Digital Literacy, Corporate Data-Mining, and Government Surveillance">
 <meta name="twitter:creator" content="@scottpinkelman">
 
 <!-- Open Graph -->
 <meta property="og:locale" content="en_US">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Using COUNTIFS in the New Google Sheets (February 2014)">
-<meta property="og:description" content="Working with the COUNTIFS in the new google sheets.">
-<meta property="og:url" content="http://www.scottpinkelman.com/blog/countifs-in-new-google-sheets">
+<meta property="og:title" content="Who's Afraid of the Internet?">
+<meta property="og:description" content="Digital Literacy, Corporate Data-Mining, and Government Surveillance">
+<meta property="og:url" content="http://www.scottpinkelman.com/blog/whos-afraid-internet">
 <meta property="og:site_name" content="Scott Pinkelman">
 
 <!-- Webmaster Tools verfication -->
@@ -28,7 +28,7 @@
 
 
 
-<link rel="canonical" href="http://www.scottpinkelman.com/blog/countifs-in-new-google-sheets">
+<link rel="canonical" href="http://www.scottpinkelman.com/blog/whos-afraid-internet">
 <link href="http://www.scottpinkelman.com/feed.xml" type="application/atom+xml" rel="alternate" title="Scott Pinkelman Feed">
 
 
@@ -111,23 +111,11 @@
   </div>
   <article itemscope itemtype="http://schema.org/BlogPosting" itemprop="blogPost">
     <div class="headline-wrap">
-      <h1 itemprop="name">Using COUNTIFS in the New Google Sheets (February 2014)</h1>
+      <h1 itemprop="name">Who's Afraid of the Internet?</h1>
       <h2></h2>
     </div><!--/ .headline-wrap -->
     <div class="article-wrap" itemprop="text">
-      <p>Today I tried to convert a spreadsheet to the  <a href="https://support.google.com/drive/answer/3541068?hl=en">new version of Google Sheets</a> that’s supposed to be faster and better. As I was copying over formulas, I decided to try out a new formula that Google had rolled out in this new version of sheets. It’s called COUNTIFS and it allows you do conditional counting based on mulitple sets of criteria. </p>
-
-<p>Previously, I had used the following formula to help build an easily copy-pasted set of cells for tracking users at a public computer lab. I wanted to check if a certain column had an entry in it, and count it if it was in a row with a certain date. The formula read: </p>
-
-<div class="highlight"><pre><code class="language-html" data-lang="html">=COUNTA( IFERROR( FILTER(N5:N300 ; SEARCH( E6 ; H5:H616 ) ) ) )</code></pre></div>
-
-<p>Using COUNTIFS, I was able to update it to a pleasant-looking:</p>
-
-<div class="highlight"><pre><code class="language-html" data-lang="html">=COUNTIFS(H5:H300, E6, N5:N300, &quot;\*&quot;)</code></pre></div>
-
-<p>Which basically says, moving backwards,: count if there’s anything (this is the variable <code>\*</code>), in the N column IF in that row the value of H (a series of dates in my example) column is E6, the date we’re building <em>Daily Total For</em>.</p>
-
-<p>This isn’t news for Excel experts, but might come in handy for those (like me) who are not.</p>
+      <p>In October 2014 <a href="http://www.thedigitalshift.com/tds/libraries-at-the-center/program/">I gave a presentation</a> at <strong>The Digital Shift: Libraries @ the Center</strong>, a virtual conference about libraries and technology. You can view my slides <a href="http://www.scottpinkelman.com/files/whos_afraid_internet.pptx">here</a>. </p>
 
       <hr />
       <footer role="contentinfo">
@@ -162,16 +150,6 @@
         
       
       
-      <li><a href="http://www.scottpinkelman.com/blog/whos-afraid-internet" title="Who's Afraid of the Internet?">Who's Afraid of the Internet?</a></li>
-      
-    
-      
-      
-        
-          
-        
-      
-      
       <li><a href="http://www.scottpinkelman.com/blog/jobscout-digital-literacy-job-seekers" title="JobScout and Digital Literacy for Job Seekers">JobScout and Digital Literacy for Job Seekers</a></li>
       
     
@@ -183,6 +161,16 @@
       
       
       <li><a href="http://www.scottpinkelman.com/blog/google-apps-scripts-column-sorter" title="Google Sheets Column Sorter with Google Apps Scripts">Google Sheets Column Sorter with Google Apps Scripts</a></li>
+      
+    
+      
+      
+        
+          
+        
+      
+      
+      <li><a href="http://www.scottpinkelman.com/blog/up-and-running-mail-in-a-box" title="Up and Running With Mail-in-a-Box">Up and Running With Mail-in-a-Box</a></li>
       
     
     </ul>
