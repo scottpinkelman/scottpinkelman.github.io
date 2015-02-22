@@ -5,13 +5,37 @@
 <generator uri="https://github.com/mojombo/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="http://www.scottpinkelman.com/feed.xml" />
 <link rel="alternate" type="text/html" href="http://www.scottpinkelman.com" />
-<updated>2015-02-11T10:05:55-05:00</updated>
+<updated>2015-02-22T16:11:33-05:00</updated>
 <id>http://www.scottpinkelman.com/</id>
 <author>
   <name>Scott Pinkelman</name>
   <uri>http://www.scottpinkelman.com/</uri>
   <email>scott@scottpinkelman.com</email>
 </author>
+
+
+<entry>
+  <title type="html"><![CDATA[Scraping Septa With Python]]></title>
+  <link rel="alternate" type="text/html" href="http://www.scottpinkelman.com/scraping-septa-with-python" />
+  <id>http://www.scottpinkelman.com/scraping-septa-with-python</id>
+  <published>2015-02-23T00:00:00-05:00</published>
+  <updated>2015-02-23T00:00:00-05:00</updated>
+  <author>
+    <name>Scott Pinkelman</name>
+    <uri>http://www.scottpinkelman.com</uri>
+    <email>scott@scottpinkelman.com</email>
+  </author>
+  <content type="html">&lt;p&gt;I was trying to get geographic data for bus and trolley routes on SEPTA (Southeastern PA Transportation Authority) and came across their &lt;a href=&quot;http://www3.septa.org/hackathon/&quot;&gt;data page&lt;/a&gt;. I noticed that they host all KML files on their site, but don’t offer a page or zip file; rather, they give a url format ending in the route number or letter: (&lt;a href=&quot;http://www3.septa.org/transitview/kml/17.kml&quot;&gt;http://www3.septa.org/transitview/kml/17.kml&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;I didn’t want to do this by hand, so I started playing around with the Beautiful Soup library in python to build a list of bus and trolley routes. I’m a Python novice, so I turned it into a learning exercise and extended the sript to download all of the KML files and, with the help of some node.js modules, convert them into separate geoJSON files, and then aggregate those files into a giant geoJSON file of all bus and trolley routes. I then foolishly loaded that giant file with Leaflet.js; so if you want to see a 10 MB geoJSON file that will probably crash your browser, &lt;a href=&quot;http://jsfiddle.net/sco_tt/tpp4jof7/4/&quot;&gt;click here&lt;/a&gt;. &lt;/p&gt;
+
+&lt;p&gt;The script, while basic, does what it should, and leaves you with a directory of KML files you can load in Google Earth. You can even open them all at once without crashing it.&lt;/p&gt;
+
+&lt;div&gt;&lt;a href=&quot;https://github.com/sco-tt/SEPTA-KML-bus-and-trolley-scraper&quot; class=&quot;btn&quot;&gt;View on Github&lt;/a&gt;&lt;/div&gt;
+
+
+  &lt;p&gt;&lt;a href=&quot;http://www.scottpinkelman.com/scraping-septa-with-python&quot;&gt;Scraping Septa With Python&lt;/a&gt; was originally published by Scott Pinkelman at &lt;a href=&quot;http://www.scottpinkelman.com&quot;&gt;Scott Pinkelman&lt;/a&gt; on February 23, 2015.&lt;/p&gt;</content>
+</entry>
 
 
 <entry>

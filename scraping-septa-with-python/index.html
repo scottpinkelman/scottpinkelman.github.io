@@ -1,0 +1,8 @@
+<p>I was trying to get geographic data for bus and trolley routes on SEPTA (Southeastern PA Transportation Authority) and came across their <a href="http://www3.septa.org/hackathon/">data page</a>. I noticed that they host all KML files on their site, but don’t offer a page or zip file; rather, they give a url format ending in the route number or letter: (<a href="http://www3.septa.org/transitview/kml/17.kml">http://www3.septa.org/transitview/kml/17.kml</a>.</p>
+
+<p>I didn’t want to do this by hand, so I started playing around with the Beautiful Soup library in python to build a list of bus and trolley routes. I’m a Python novice, so I turned it into a learning exercise and extended the sript to download all of the KML files and, with the help of some node.js modules, convert them into separate geoJSON files, and then aggregate those files into a giant geoJSON file of all bus and trolley routes. I then foolishly loaded that giant file with Leaflet.js; so if you want to see a 10 MB geoJSON file that will probably crash your browser, <a href="http://jsfiddle.net/sco_tt/tpp4jof7/4/">click here</a>. </p>
+
+<p>The script, while basic, does what it should, and leaves you with a directory of KML files you can load in Google Earth. You can even open them all at once without crashing it.</p>
+
+<div><a href="https://github.com/sco-tt/SEPTA-KML-bus-and-trolley-scraper" class="btn">View on Github</a></div>
+
