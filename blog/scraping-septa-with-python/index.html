@@ -5,22 +5,22 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
 <head>
 <meta charset="utf-8">
-<title>Articles tagged data &#8211; Scott Pinkelman</title>
-<meta name="description" content="">
-<meta name="keywords" content="">
+<title>Scraping SEPTA with Python &#8211; Scott Pinkelman</title>
+<meta name="description" content="Script to download all of SEPTA's bus and trolley KML files">
+<meta name="keywords" content="data, python">
 <!-- Twitter Cards -->
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://www.scottpinkelman.com/images/">
-<meta name="twitter:title" content="Articles tagged data">
-<meta name="twitter:description" content="Things I do on computers when I'm not reading books.">
+<meta name="twitter:title" content="Scraping SEPTA with Python">
+<meta name="twitter:description" content="Script to download all of SEPTA's bus and trolley KML files">
 <meta name="twitter:creator" content="@scottpinkelman">
 
 <!-- Open Graph -->
 <meta property="og:locale" content="en_US">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Articles tagged data">
-<meta property="og:description" content="Things I do on computers when I'm not reading books.">
-<meta property="og:url" content="http://www.scottpinkelman.com/tag/data/">
+<meta property="og:title" content="Scraping SEPTA with Python">
+<meta property="og:description" content="Script to download all of SEPTA's bus and trolley KML files">
+<meta property="og:url" content="http://www.scottpinkelman.com/blog/scraping-septa-with-python">
 <meta property="og:site_name" content="Scott Pinkelman">
 
 <!-- Webmaster Tools verfication -->
@@ -28,7 +28,7 @@
 
 
 
-<link rel="canonical" href="http://www.scottpinkelman.com/tag/data/">
+<link rel="canonical" href="http://www.scottpinkelman.com/blog/scraping-septa-with-python">
 <link href="http://www.scottpinkelman.com/feed.xml" type="application/atom+xml" rel="alternate" title="Scott Pinkelman Feed">
 
 
@@ -67,7 +67,7 @@
 
 </head>
 
-<body class="page" itemscope itemtype="http://schema.org/WebPage">
+<body class="article" itemscope itemtype="http://schema.org/WebPage">
 
 <!--[if lt IE 9]><div class="browser-upgrade alert alert-info">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</div><![endif]-->
 
@@ -94,7 +94,7 @@
 
 
 
-<div id="main" role="main"  itemprop="mainContentOfPage">
+<div id="main" role="main" itemprop="mainContentOfPage" itemscope itemtype="http://schema.org/Blog">
   <div class="article-author-side">
     <img src="http://www.scottpinkelman.com/images/bio-photo.jpg" class="bio-photo" alt="Scott Pinkelman bio photo"></a>
 <h3>Scott Pinkelman</h3>
@@ -109,33 +109,80 @@
 
 
   </div>
-  <article itemscope itemtype="http://schema.org/CreativeWork">
-    <h1 itemprop="name">Articles tagged data</h1>
+  <article itemscope itemtype="http://schema.org/BlogPosting" itemprop="blogPost">
+    <div class="headline-wrap">
+      <h1 itemprop="name">Scraping SEPTA with Python</h1>
+      <h2></h2>
+    </div><!--/ .headline-wrap -->
     <div class="article-wrap" itemprop="text">
-      <ul class="post-list">
+      <p>I was trying to get geographic data for bus and trolley routes on SEPTA (Southeastern PA Transportation Authority) and came across their <a href="http://www3.septa.org/hackathon/">data page</a>. I noticed that they host all KML files on their site, but don’t offer a page or zip file; rather, they give a url format ending in the route number or letter: (<a href="http://www3.septa.org/transitview/kml/17.kml">http://www3.septa.org/transitview/kml/17.kml</a>.</p>
 
-  <li>
-    <a class="post-link" href="/blog/scraping-septa-with-python">Scraping SEPTA with Python</a> <span class="post-meta">February 23, 2015</span>
-  </li>
+<p>I didn’t want to do this by hand, so I started playing around with the Beautiful Soup library in python to build a list of bus and trolley routes. I’m a Python novice, so I turned it into a learning exercise and extended the sript to download all of the KML files and, with the help of some node.js modules, convert them into separate geoJSON files, and then aggregate those files into a giant geoJSON file of all bus and trolley routes. I then foolishly loaded that giant file with Leaflet.js; so if you want to see a 10 MB geoJSON file that will probably crash your browser, <a href="http://jsfiddle.net/sco_tt/tpp4jof7/4/">click here</a>. </p>
 
-  <li>
-    <a class="post-link" href="/blog/google-apps-scripts-column-sorter">Google Sheets Column Sorter with Google Apps Scripts</a> <span class="post-meta">November 30, 2014</span>
-  </li>
+<p>The script, while basic, does what it should, and leaves you with a directory of KML files you can load in Google Earth. You can even open them all at once without crashing it.</p>
 
-  <li>
-    <a class="post-link" href="/blog/google-apps-script-compiling-spreadsheets">Compiling Spreadsheets in Google Sheets</a> <span class="post-meta">September 14, 2014</span>
-  </li>
+<div><a href="https://github.com/sco-tt/SEPTA-KML-bus-and-trolley-scraper" class="btn">View on Github</a></div>
 
-  <li>
-    <a class="post-link" href="/blog/countifs-in-new-google-sheets">Using COUNTIFS in the New Google Sheets (February 2014)</a> <span class="post-meta">February 28, 2014</span>
-  </li>
 
-</ul>
+      <hr />
+      <footer role="contentinfo">
+        <div class="article-author-bottom">
+          <img src="http://www.scottpinkelman.com/images/bio-photo.jpg" class="bio-photo" alt="Scott Pinkelman bio photo"></a>
+<h3>Scott Pinkelman</h3>
+<p>web development, data visualization, digital literacy</p>
+<a href="http://twitter.com/scottpinkelman" class="author-social" target="_blank"><i class="icon-twitter"></i> Twitter</a>
+
+
+<a href="http://linkedin.com/profile/view?id=205868891" class="author-social" target="_blank"><i class="icon-linkedin"></i> LinkedIn</a>
+
+<a href="http://github.com/sco-tt/" class="author-social" target="_blank"><i class="icon-github"></i> Github</a>
+
+
+
+        </div>
+      </footer>
     </div><!-- /.article-wrap -->
   </article>
-</div><!-- /#index -->
+</div><!-- /#main -->
 
 <div class="footer-wrap">
+  <div class="related-articles">
+  <h4>You might also enjoy <small class="pull-right">(<a href="http://www.scottpinkelman.com/blog">View all articles</a>)</small></h4>
+    <ul>
+    
+      
+      
+        
+          
+        
+      
+      
+      <li><a href="http://www.scottpinkelman.com/blog/whos-afraid-internet" title="Who's Afraid of the Internet?">Who's Afraid of the Internet?</a></li>
+      
+    
+      
+      
+        
+          
+        
+      
+      
+      <li><a href="http://www.scottpinkelman.com/blog/jobscout-digital-literacy-job-seekers" title="JobScout and Digital Literacy for Job Seekers">JobScout and Digital Literacy for Job Seekers</a></li>
+      
+    
+      
+      
+        
+          
+        
+      
+      
+      <li><a href="http://www.scottpinkelman.com/blog/google-apps-scripts-column-sorter" title="Google Sheets Column Sorter with Google Apps Scripts">Google Sheets Column Sorter with Google Apps Scripts</a></li>
+      
+    
+    </ul>
+    <hr />
+  </div><!-- /.related-articles -->
   <footer>
     <span>&copy; 2015 Scott Pinkelman. Powered by <a href="http://jekyllrb.com">Jekyll</a> and <a href="https://pages.github.com/">GitHub pages</a> with the <a href="http://mademistakes.com/">Minimal Mistakes</a> theme.</span>
 
@@ -159,7 +206,7 @@
 </script>
 
 
-          
+	        
 
 </body>
 </html>

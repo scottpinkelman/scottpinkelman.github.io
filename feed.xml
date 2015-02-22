@@ -5,7 +5,7 @@
 <generator uri="https://github.com/mojombo/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="http://www.scottpinkelman.com/feed.xml" />
 <link rel="alternate" type="text/html" href="http://www.scottpinkelman.com" />
-<updated>2015-02-22T16:17:18-05:00</updated>
+<updated>2015-02-22T16:19:05-05:00</updated>
 <id>http://www.scottpinkelman.com/</id>
 <author>
   <name>Scott Pinkelman</name>
@@ -15,11 +15,12 @@
 
 
 <entry>
-  <title type="html"><![CDATA[Scraping Septa With Python]]></title>
-  <link rel="alternate" type="text/html" href="http://www.scottpinkelman.com/scraping-septa-with-python" />
-  <id>http://www.scottpinkelman.com/scraping-septa-with-python</id>
+  <title type="html"><![CDATA[Scraping SEPTA with Python]]></title>
+  <link rel="alternate" type="text/html" href="http://www.scottpinkelman.com/blog/scraping-septa-with-python" />
+  <id>http://www.scottpinkelman.com/blog/scraping-septa-with-python</id>
+  <updated>2015-02-07T00:00:00-00:00</updated>
   <published>2015-02-23T00:00:00-05:00</published>
-  <updated>2015-02-23T00:00:00-05:00</updated>
+  
   <author>
     <name>Scott Pinkelman</name>
     <uri>http://www.scottpinkelman.com</uri>
@@ -34,7 +35,7 @@
 &lt;div&gt;&lt;a href=&quot;https://github.com/sco-tt/SEPTA-KML-bus-and-trolley-scraper&quot; class=&quot;btn&quot;&gt;View on Github&lt;/a&gt;&lt;/div&gt;
 
 
-  &lt;p&gt;&lt;a href=&quot;http://www.scottpinkelman.com/scraping-septa-with-python&quot;&gt;Scraping Septa With Python&lt;/a&gt; was originally published by Scott Pinkelman at &lt;a href=&quot;http://www.scottpinkelman.com&quot;&gt;Scott Pinkelman&lt;/a&gt; on February 23, 2015.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http://www.scottpinkelman.com/blog/scraping-septa-with-python&quot;&gt;Scraping SEPTA with Python&lt;/a&gt; was originally published by Scott Pinkelman at &lt;a href=&quot;http://www.scottpinkelman.com&quot;&gt;Scott Pinkelman&lt;/a&gt; on February 23, 2015.&lt;/p&gt;</content>
 </entry>
 
 
