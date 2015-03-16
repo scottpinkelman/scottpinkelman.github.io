@@ -5,7 +5,7 @@
 <generator uri="https://github.com/mojombo/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="http://www.scottpinkelman.com/feed.xml" />
 <link rel="alternate" type="text/html" href="http://www.scottpinkelman.com" />
-<updated>2015-03-16T16:55:37-04:00</updated>
+<updated>2015-03-16T16:58:28-04:00</updated>
 <id>http://www.scottpinkelman.com/</id>
 <author>
   <name>Scott Pinkelman</name>
@@ -68,6 +68,8 @@ do
         cd $site_dir
 done
 echo &amp;quot;Done with Drupal Security Updates&amp;quot;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;I use this on a handful of simple sites and it works for me. If you’re managing more complicated sites it might not be for you. Use at your own risk!&lt;/p&gt;
 
 &lt;div&gt;&lt;a href=&quot;https://gist.github.com/sco-tt/a79fd45e669b595cebcd&quot; class=&quot;btn&quot;&gt;View on Github&lt;/a&gt;&lt;/div&gt;
 
