@@ -5,13 +5,75 @@
 <generator uri="https://github.com/mojombo/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="http://www.scottpinkelman.com/feed.xml" />
 <link rel="alternate" type="text/html" href="http://www.scottpinkelman.com" />
-<updated>2015-03-04T06:53:24-05:00</updated>
+<updated>2015-03-16T16:55:37-04:00</updated>
 <id>http://www.scottpinkelman.com/</id>
 <author>
   <name>Scott Pinkelman</name>
   <uri>http://www.scottpinkelman.com/</uri>
   <email>scott@scottpinkelman.com</email>
 </author>
+
+
+<entry>
+  <title type="html"><![CDATA[Bash Script for Drush Security Updates]]></title>
+  <link rel="alternate" type="text/html" href="http://www.scottpinkelman.com/blog/bash-script-drush-security-updates" />
+  <id>http://www.scottpinkelman.com/blog/bash-script-drush-security-updates</id>
+  <updated>2015-03-16T00:00:00-00:00</updated>
+  <published>2015-03-16T00:00:00-04:00</published>
+  
+  <author>
+    <name>Scott Pinkelman</name>
+    <uri>http://www.scottpinkelman.com</uri>
+    <email>scott@scottpinkelman.com</email>
+  </author>
+  <content type="html">&lt;p&gt;I have a VPS with a handful of sites on them; a few built with Wordpress, a few built with Drupal, and a few static sites. I periodically run security updates, but I’ve been practicing bash scripts lately, so I gave myself the task of automating security updates. In this script I use the wonderful &lt;a href=&quot;http://www.drush.org/en/master/&quot;&gt;drush&lt;/a&gt; utility to do security updates (modules and core) only, as I’ll wait for moments when I have more time updates all modules updates and test.&lt;/p&gt;
+
+&lt;p&gt;It’s very simple; I have another script that does backups, so I’m not doing them here. The main drush command&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;drush up --security-only&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;is interactive, so if you don’t want to go through with it you can just hit ‘n’.&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;#!/bin/bash
+# Script to do security updates only in Drupal 6 and Drupal 7 using drush version 6.2.0
+# Note: drush up --security-only updates modules as well as core
+
+# run `which drush` to find this path
+drush='/usr/bin/drush'
+# where your drupal sites live
+site_dir='/var/www'
+echo &amp;quot;Scanning sites directory for Drupal installations&amp;quot;
+cd $site_dir
+for i in $(ls)
+do
+        a=$(readlink -f $i)
+        # if your site files are in directories immediately
+        # beneath your site_dir, i.e. /var/www/site.com,
+        # then you don't need to `cd public_html'
+        # just use `cd $a` below
+        cd $a &amp;amp;&amp;amp; cd public_html
+        echo $(pwd)
+        status=$($drush status | wc -l)
+        # Count the lines on drush status to see if it's
+        # actually a drupal site
+        if [[ $status -gt 7 ]]
+        then
+                echo &amp;quot;Drupal site found&amp;quot;
+                # `drush up` is interactive, so if you
+                # don't want updates hit `n` for each site
+                $drush up --security-only
+        else
+                echo &amp;quot;No Drupal site found in this directory&amp;quot;
+        fi
+        cd $site_dir
+done
+echo &amp;quot;Done with Drupal Security Updates&amp;quot;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;div&gt;&lt;a href=&quot;https://gist.github.com/sco-tt/a79fd45e669b595cebcd&quot; class=&quot;btn&quot;&gt;View on Github&lt;/a&gt;&lt;/div&gt;
+
+
+  &lt;p&gt;&lt;a href=&quot;http://www.scottpinkelman.com/blog/bash-script-drush-security-updates&quot;&gt;Bash Script for Drush Security Updates&lt;/a&gt; was originally published by Scott Pinkelman at &lt;a href=&quot;http://www.scottpinkelman.com&quot;&gt;Scott Pinkelman&lt;/a&gt; on March 16, 2015.&lt;/p&gt;</content>
+</entry>
 
 
 <entry>
@@ -395,7 +457,6 @@ added alias admin@box.mydomain.com (=&amp;gt; administrator@box.mydomain.com)&lt
 &lt;ul&gt;
   &lt;li&gt;This was made with Omega 7.x-3.1&lt;/li&gt;
   &lt;li&gt;This only works for first level menu items. See &lt;a href=&quot;http://ivanchaquea.com/creating-responsive-menu-omega-subthemes.html&quot;&gt;this tutorial&lt;/a&gt; for multi-level menus&lt;/li&gt;
-  &lt;li&gt;There is a &lt;a href=&quot;http://demos.scottpinkelman.com/menus/&quot;&gt;demo&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h2 id=&quot;what-youll-need&quot;&gt;What you’ll need&lt;/h2&gt;

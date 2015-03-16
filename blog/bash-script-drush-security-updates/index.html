@@ -5,22 +5,22 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
 <head>
 <meta charset="utf-8">
-<title>Compiling Spreadsheets in Google Sheets &#8211; Scott Pinkelman</title>
-<meta name="description" content="A Google Apps script to copy sheet values to a master.">
-<meta name="keywords" content="data, spreadsheets, google apps scripts">
+<title>Bash Script for Drush Security Updates &#8211; Scott Pinkelman</title>
+<meta name="description" content="Simple Script to Automate Drupal Security Updates">
+<meta name="keywords" content="linux">
 <!-- Twitter Cards -->
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://www.scottpinkelman.com/images/">
-<meta name="twitter:title" content="Compiling Spreadsheets in Google Sheets">
-<meta name="twitter:description" content="A Google Apps script to copy sheet values to a master.">
+<meta name="twitter:title" content="Bash Script for Drush Security Updates">
+<meta name="twitter:description" content="Simple Script to Automate Drupal Security Updates">
 <meta name="twitter:creator" content="@scottpinkelman">
 
 <!-- Open Graph -->
 <meta property="og:locale" content="en_US">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Compiling Spreadsheets in Google Sheets">
-<meta property="og:description" content="A Google Apps script to copy sheet values to a master.">
-<meta property="og:url" content="http://www.scottpinkelman.com/blog/google-apps-script-compiling-spreadsheets">
+<meta property="og:title" content="Bash Script for Drush Security Updates">
+<meta property="og:description" content="Simple Script to Automate Drupal Security Updates">
+<meta property="og:url" content="http://www.scottpinkelman.com/blog/bash-script-drush-security-updates">
 <meta property="og:site_name" content="Scott Pinkelman">
 
 <!-- Webmaster Tools verfication -->
@@ -28,7 +28,7 @@
 
 
 
-<link rel="canonical" href="http://www.scottpinkelman.com/blog/google-apps-script-compiling-spreadsheets">
+<link rel="canonical" href="http://www.scottpinkelman.com/blog/bash-script-drush-security-updates">
 <link href="http://www.scottpinkelman.com/feed.xml" type="application/atom+xml" rel="alternate" title="Scott Pinkelman Feed">
 
 
@@ -112,13 +112,55 @@
   </div>
   <article itemscope itemtype="http://schema.org/BlogPosting" itemprop="blogPost">
     <div class="headline-wrap">
-      <h1 itemprop="name">Compiling Spreadsheets in Google Sheets</h1>
+      <h1 itemprop="name">Bash Script for Drush Security Updates</h1>
       <h2></h2>
     </div><!--/ .headline-wrap -->
     <div class="article-wrap" itemprop="text">
-      <p>At my work with the Free Library / City of Philadelphia Office of Innovation and Technology, I use Google Spreadsheets to track visitors to public computer labs. I was recently asked to come up a way of compiling 19 different spreadsheets into one master spreadsheet. I wrote a Google Apps script that copies a the current sheet’s values to a master spreadsheet (note: this doesn’t copy the the entire spreadsheet, just the currently-viewd sheet). In the master spreadsheet, the values go into one sheet where an extra column is added pulling in the names of the source spreadsheet and sheet (For my purposes these corresponded to the name of a computer lab and month of usage data). Additionally, a separate sheet in the master logs all copy operations with a timestamp. </p>
+      <p>I have a VPS with a handful of sites on them; a few built with Wordpress, a few built with Drupal, and a few static sites. I periodically run security updates, but I’ve been practicing bash scripts lately, so I gave myself the task of automating security updates. In this script I use the wonderful <a href="http://www.drush.org/en/master/">drush</a> utility to do security updates (modules and core) only, as I’ll wait for moments when I have more time updates all modules updates and test.</p>
 
-<p>Check it out <a href="https://gist.github.com/sco-tt/ebfd79bc95a6bbb6881c">on Github</a>.</p>
+<p>It’s very simple; I have another script that does backups, so I’m not doing them here. The main drush command</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">drush up --security-only</code></pre></div>
+
+<p>is interactive, so if you don’t want to go through with it you can just hit ‘n’.</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">#!/bin/bash
+# Script to do security updates only in Drupal 6 and Drupal 7 using drush version 6.2.0
+# Note: drush up --security-only updates modules as well as core
+
+# run `which drush` to find this path
+drush='/usr/bin/drush'
+# where your drupal sites live
+site_dir='/var/www'
+echo &quot;Scanning sites directory for Drupal installations&quot;
+cd $site_dir
+for i in $(ls)
+do
+        a=$(readlink -f $i)
+        # if your site files are in directories immediately
+        # beneath your site_dir, i.e. /var/www/site.com,
+        # then you don't need to `cd public_html'
+        # just use `cd $a` below
+        cd $a &amp;&amp; cd public_html
+        echo $(pwd)
+        status=$($drush status | wc -l)
+        # Count the lines on drush status to see if it's
+        # actually a drupal site
+        if [[ $status -gt 7 ]]
+        then
+                echo &quot;Drupal site found&quot;
+                # `drush up` is interactive, so if you
+                # don't want updates hit `n` for each site
+                $drush up --security-only
+        else
+                echo &quot;No Drupal site found in this directory&quot;
+        fi
+        cd $site_dir
+done
+echo &quot;Done with Drupal Security Updates&quot;</code></pre></div>
+
+<div><a href="https://gist.github.com/sco-tt/a79fd45e669b595cebcd" class="btn">View on Github</a></div>
+
 
       <hr />
       <footer role="contentinfo">
@@ -153,16 +195,6 @@
         
       
       
-      <li><a href="http://www.scottpinkelman.com/blog/bash-script-drush-security-updates" title="Bash Script for Drush Security Updates">Bash Script for Drush Security Updates</a></li>
-      
-    
-      
-      
-        
-          
-        
-      
-      
       <li><a href="http://www.scottpinkelman.com/blog/scraping-septa-with-python" title="Scraping SEPTA with Python">Scraping SEPTA with Python</a></li>
       
     
@@ -174,6 +206,16 @@
       
       
       <li><a href="http://www.scottpinkelman.com/blog/whos-afraid-internet" title="Who's Afraid of the Internet?">Who's Afraid of the Internet?</a></li>
+      
+    
+      
+      
+        
+          
+        
+      
+      
+      <li><a href="http://www.scottpinkelman.com/blog/jobscout-digital-literacy-job-seekers" title="JobScout and Digital Literacy for Job Seekers">JobScout and Digital Literacy for Job Seekers</a></li>
       
     
     </ul>
