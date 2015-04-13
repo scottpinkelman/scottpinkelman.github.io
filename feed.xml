@@ -5,7 +5,7 @@
 <generator uri="https://github.com/mojombo/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="http://www.scottpinkelman.com/feed.xml" />
 <link rel="alternate" type="text/html" href="http://www.scottpinkelman.com" />
-<updated>2015-04-03T16:51:53-04:00</updated>
+<updated>2015-04-13T09:34:37-04:00</updated>
 <id>http://www.scottpinkelman.com/</id>
 <author>
   <name>Scott Pinkelman</name>
@@ -281,7 +281,7 @@ echo &amp;quot;Done with Drupal Security Updates&amp;quot;&lt;/code&gt;&lt;/pre&
 
 &lt;h2 id=&quot;vps&quot;&gt;VPS&lt;/h2&gt;
 
-&lt;p&gt;Mail-in-a-Box recommends a VPS with at least 1G of ram. Importantly, nothing else should be on your machine. I already have an account with &lt;a href=&quot;http://digitalocean.com&quot;&gt;Digital Ocean&lt;/a&gt;, so I decided to go with them. If you starting from scratch you can see Digital Ocean’s great documentation on &lt;a href=&quot;https://www.digitalocean.com/community/tutorials/initial-server-setup-with-ubuntu-14-04&quot;&gt;getting started with Ubuntu 14.04&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Mail-in-a-Box recommends a VPS with at least 1G of ram. Importantly, nothing else should be on your machine. I already have an account with &lt;a href=&quot;http://digitalocean.com&quot;&gt;Digital Ocean&lt;/a&gt; &lt;a href=&quot;https://www.digitalocean.com/?refcode=5338a86197e5&quot;&gt;(ref link)&lt;/a&gt;, so I decided to go with them. If you starting from scratch you can see Digital Ocean’s great documentation on &lt;a href=&quot;https://www.digitalocean.com/community/tutorials/initial-server-setup-with-ubuntu-14-04&quot;&gt;getting started with Ubuntu 14.04&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;The first thing I do is login to my Digital Ocean account panel and select a new droplet with Ubuntu 14.04 64 bit on it. It automatically adds my SSH keys, so I don’t need to be sent a root user password over email.&lt;/p&gt;
 
