@@ -5,13 +5,48 @@
 <generator uri="https://github.com/mojombo/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="http://www.scottpinkelman.com/feed.xml" />
 <link rel="alternate" type="text/html" href="http://www.scottpinkelman.com" />
-<updated>2015-04-26T08:44:23-04:00</updated>
+<updated>2016-07-15T20:33:34-04:00</updated>
 <id>http://www.scottpinkelman.com/</id>
 <author>
   <name>Scott Pinkelman</name>
   <uri>http://www.scottpinkelman.com/</uri>
   <email>scott@scottpinkelman.com</email>
 </author>
+
+
+<entry>
+  <title type="html"><![CDATA[Checking for Vulnerable Drupal Modules with drush and egrep]]></title>
+  <link rel="alternate" type="text/html" href="http://www.scottpinkelman.com/blog/checking-for-vulnerable-drupal-modules-with-drush-and-egrep" />
+  <id>http://www.scottpinkelman.com/blog/checking-for-vulnerable-drupal-modules-with-drush-and-egrep</id>
+  <updated>2016-07-15T00:00:00-00:00</updated>
+  <published>2016-07-15T00:00:00-04:00</published>
+  
+  <author>
+    <name>Scott Pinkelman</name>
+    <uri>http://www.scottpinkelman.com</uri>
+    <email>scott@scottpinkelman.com</email>
+  </author>
+  <content type="html">&lt;p&gt;This week the Drupal Security Team &lt;a href=&quot;https://www.drupal.org/psa-2016-001&quot;&gt;announced&lt;/a&gt; that several contributed modules had extremely critical vulnerabilites. On Wednesday, July 13, the security updates for these modules were released. The modules were:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;RESTWS &lt;/li&gt;
+  &lt;li&gt;Coder &lt;/li&gt;
+  &lt;li&gt;Webform Multiple File Upload &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;While it’s easy enough to look for three modules, I wanted to automate the process across the sites I had to check. Since I already had Drush installed, I took the opportunity to use drush along some basic Linux commands and came up with this:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;drush pm-list | egrep '(\(coder\)|\(webform_multifile\)|\(restws\))'&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;code&gt;drush pm-list&lt;/code&gt; will list out all of the modules installed on your site. The piple &lt;code&gt;|&lt;/code&gt; passes this output to the next command. egrep is grep with regular expression, and the rest of the command is a regular expresion that looks for the module shortname (‘coder’, ‘restws’) wrapped in a parentheses, which is how drush pm-list outputs. This allowed me to get better results that my first command:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;drush pm-list | egrep '(coder|webform_multifile|restws)'&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;which returned a false positive for &lt;a href=&quot;https://www.drupal.org/project/geocoder&quot;&gt;Geocoder Module&lt;/a&gt;.&lt;/p&gt;
+
+
+  &lt;p&gt;&lt;a href=&quot;http://www.scottpinkelman.com/blog/checking-for-vulnerable-drupal-modules-with-drush-and-egrep&quot;&gt;Checking for Vulnerable Drupal Modules with drush and egrep&lt;/a&gt; was originally published by Scott Pinkelman at &lt;a href=&quot;http://www.scottpinkelman.com&quot;&gt;Scott Pinkelman&lt;/a&gt; on July 15, 2016.&lt;/p&gt;</content>
+</entry>
 
 
 <entry>

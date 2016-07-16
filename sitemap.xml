@@ -6,6 +6,10 @@
     
     
     <url>
+        <loc>http://www.scottpinkelman.com/blog/checking-for-vulnerable-drupal-modules-with-drush-and-egrep</loc>
+    </url>
+    
+    <url>
         <loc>http://www.scottpinkelman.com/blog/bash-script-drush-security-updates</loc>
     </url>
     
